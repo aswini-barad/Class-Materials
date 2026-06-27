@@ -1,0 +1,471 @@
+Constructor Overloading in Java
+Constructor Overloading in Java means having more than one constructor 
+in a class with different
+ parameter lists (i.e., different number or type of parameters).
+
+It allows the creation of objects in different ways using different sets of data
+
+
+class X
+ {
+ 	X()
+ 	{
+
+ 	}
+ 	X(int a)
+ 	{
+            System.out.println("hi" + a);
+ 	}
+ 	X(int b)
+ 	{
+           System.out.println("bye" + b);
+ 	}
+ }
+
+
+ class Test
+{
+	
+		public static void main(String arg[])
+		{
+			
+		   X ob=new X(10);	
+		}
+}
+
+
+o/p:
+error
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac Test.java
+Test.java:11: error: constructor X(int) is already defined in class X
+        X(int b)
+        ^
+1 error
+
+
+
+ class X
+ {
+ 	X()
+ 	{
+
+ 	}
+ 	X(int a)
+ 	{
+            System.out.println("hi  " + a);
+ 	}
+ 	X(double b)
+ 	{
+           System.out.println("bye "+ b);
+ 	}
+ 	X(int a,int b) // 2argument 
+ 	{
+ 		System.out.println("ok ");
+ 	}
+ 	X(int a,double b) 
+ 	{
+
+ 	}
+ 	X(double a ,int b)   //oreder
+ 	{
+
+ 	}
+
+
+ }
+
+
+ class Test
+{
+	
+		public static void main(String arg[])
+		{
+			
+		   X ob=new X(10);	
+		   X obj=new X(2.5);
+
+		}
+}
+
+hi  10
+bye   2.5
+
+
+
+public final class java.lang.String implements java.io.Serializable, java.lang.Comparable<java.lang.String>, java.lang.CharSequence, java.lang.constant.Constable, java.lang.constant.ConstantDesc {
+  static final boolean COMPACT_STRINGS;
+  public static final java.util.Comparator<java.lang.String> CASE_INSENSITIVE_ORDER;
+  static final byte LATIN1;
+  static final byte UTF16;
+  public java.lang.String();
+  public java.lang.String(java.lang.String);
+  public java.lang.String(char[]);
+  public java.lang.String(char[], int, int);
+  public java.lang.String(int[], int, int);
+  public java.lang.String(byte[], int, int, int);
+  public java.lang.String(byte[], int);
+  public java.lang.String(byte[], int, int, java.lang.String) throws java.io.UnsupportedEncodingException;
+  public java.lang.String(byte[], int, int, java.nio.charset.Charset);
+  static java.lang.String newStringUTF8NoRepl(byte[], int, int);
+  static java.lang.String newStringNoRepl(byte[], java.nio.charset.Charset) throws java.nio.charset.CharacterCodingException;
+  static byte[] getBytesUTF8NoRepl(java.lang.String);
+  static byte[] getBytesNoRepl(java.lang.String, java.nio.charset.Charset) throws java.nio.charset.CharacterCodingException;
+  static int decodeASCII(byte[], int, char[], int, int);
+  public java.lang.String(byte[], java.lang.String) throws java.io.UnsupportedEncodingException;
+  public java.lang.String(byte[], java.nio.charset.Charset);
+  public java.lang.String(byte[], int, int);
+  public java.lang.String(byte[]);
+  public java.lang.String(java.lang.StringBuffer);
+  public java.lang.String(java.lang.StringBuilder);
+  public int length();
+  public boolean isEmpty();
+  public char charAt(int);
+  public int codePointAt(int);
+  public int codePointBefore(int);
+  public int codePointCount(int, int);
+  public int offsetByCodePoints(int, int);
+  public void getChars(int, int, char[], int);
+  public void getBytes(int, int, byte[], int);
+  public byte[] getBytes(java.lang.String) throws java.io.UnsupportedEncodingException;
+  public byte[] getBytes(java.nio.charset.Charset);
+  public byte[] getBytes();
+  public boolean equals(java.lang.Object);
+  public boolean contentEquals(java.lang.StringBuffer);
+  public boolean contentEquals(java.lang.CharSequence);
+  public boolean equalsIgnoreCase(java.lang.String);
+  public int compareTo(java.lang.String);
+  public int compareToIgnoreCase(java.lang.String);
+  public boolean regionMatches(int, java.lang.String, int, int);
+  public boolean regionMatches(boolean, int, java.lang.String, int, int);
+  public boolean startsWith(java.lang.String, int);
+  public boolean startsWith(java.lang.String);
+  public boolean endsWith(java.lang.String);
+  public int hashCode();
+  public int indexOf(int);
+  public int indexOf(int, int);
+  public int lastIndexOf(int);
+  public int lastIndexOf(int, int);
+  public int indexOf(java.lang.String);
+  public int indexOf(java.lang.String, int);
+  static int indexOf(byte[], byte, int, java.lang.String, int);
+  public int lastIndexOf(java.lang.String);
+  public int lastIndexOf(java.lang.String, int);
+  static int lastIndexOf(byte[], byte, int, java.lang.String, int);
+  public java.lang.String substring(int);
+  public java.lang.String substring(int, int);
+  public java.lang.CharSequence subSequence(int, int);
+  public java.lang.String concat(java.lang.String);
+  public java.lang.String replace(char, char);
+  public boolean matches(java.lang.String);
+  public boolean contains(java.lang.CharSequence);
+  public java.lang.String replaceFirst(java.lang.String, java.lang.String);
+  public java.lang.String replaceAll(java.lang.String, java.lang.String);
+  public java.lang.String replace(java.lang.CharSequence, java.lang.CharSequence);
+  public java.lang.String[] split(java.lang.String, int);
+  public java.lang.String[] split(java.lang.String);
+  public static java.lang.String join(java.lang.CharSequence, java.lang.CharSequence...);
+  static java.lang.String join(java.lang.String, java.lang.String, java.lang.String, java.lang.String[], int);
+  public static java.lang.String join(java.lang.CharSequence, java.lang.Iterable<? extends java.lang.CharSequence>);
+  public java.lang.String toLowerCase(java.util.Locale);
+  public java.lang.String toLowerCase();
+  public java.lang.String toUpperCase(java.util.Locale);
+  public java.lang.String toUpperCase();
+  public java.lang.String trim();
+  public java.lang.String strip();
+  public java.lang.String stripLeading();
+  public java.lang.String stripTrailing();
+  public boolean isBlank();
+  public java.util.stream.Stream<java.lang.String> lines();
+  public java.lang.String indent(int);
+  public java.lang.String stripIndent();
+  public java.lang.String translateEscapes();
+  public <R> R transform(java.util.function.Function<? super java.lang.String, ? extends R>);
+  public java.lang.String toString();
+  public java.util.stream.IntStream chars();
+  public java.util.stream.IntStream codePoints();
+  public char[] toCharArray();
+  public static java.lang.String format(java.lang.String, java.lang.Object...);
+  public static java.lang.String format(java.util.Locale, java.lang.String, java.lang.Object...);
+  public java.lang.String formatted(java.lang.Object...);
+  public static java.lang.String valueOf(java.lang.Object);
+  public static java.lang.String valueOf(char[]);
+  public static java.lang.String valueOf(char[], int, int);
+  public static java.lang.String copyValueOf(char[], int, int);
+  public static java.lang.String copyValueOf(char[]);
+  public static java.lang.String valueOf(boolean);
+  public static java.lang.String valueOf(char);
+  public static java.lang.String valueOf(int);
+  public static java.lang.String valueOf(long);
+  public static java.lang.String valueOf(float);
+  public static java.lang.String valueOf(double);
+  public native java.lang.String intern();
+  public java.lang.String repeat(int);
+  void getBytes(byte[], int, byte);
+  void getBytes(byte[], int, int, byte, int);
+  java.lang.String(char[], int, int, java.lang.Void);
+  java.lang.String(java.lang.AbstractStringBuilder, java.lang.Void);
+  java.lang.String(byte[], byte);
+  byte coder();
+  byte[] value();
+  boolean isLatin1();
+  static void checkIndex(int, int);
+  static void checkOffset(int, int);
+  static void checkBoundsOffCount(int, int, int);
+  static void checkBoundsBeginEnd(int, int, int);
+  static java.lang.String valueOfCodePoint(int);
+  public java.util.Optional<java.lang.String> describeConstable();
+  public java.lang.String resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup);
+  public int compareTo(java.lang.Object);
+  public java.lang.Object resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException;
+  static {};
+}
+
+
+class Student {
+    int id;
+    String name;
+
+    // Constructor 1: No parameters
+    Student() {
+        id = 0;
+        name = "Unknown";
+    }
+
+    // Constructor 2: One parameter
+    Student(int i) {
+        id = i;
+        name = "Unknown";
+    }
+
+    // Constructor 3: Two parameters
+    Student(int i, String n) {
+        id = i;
+        name = n;
+    }
+
+    void display() {
+        System.out.println("ID: " + id + ", Name: " + name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        Student s2 = new Student(101);
+        Student s3 = new Student(102, "Jitendra");
+
+        s1.display();  // ID: 0, Name: Unknown
+        s2.display();  // ID: 101, Name: Unknown
+        s3.display();  // ID: 102, Name: Jitendra
+    }
+}
+
+
+constructor chainging
+________________________
+
+Constructor chaining is the process of calling one constructor from another constructor within the same class or from the parent class.
+
+🔸 Two Types of Constructor Chaining:
+Within the same class using this()
+
+From a parent class using super()
+
+
+
+without constructor chaining  2 object
+
+ class X
+ {
+ 	X()
+ 	{
+ 	    //super()  it call parent class constructor 
+         System.out.println("bye");
+ 	}
+ 	X(int a)
+ 	{
+ 		//super()  it call parent class constructor 
+            System.out.println("hi  " + a);
+ 	}
+
+ }
+
+ class Test
+{
+	
+		public static void main(String arg[])
+		{
+			
+		   X ob=new X(10);	
+		   X obj=new X();
+
+		}
+}
+
+o/p:
+hi  10
+bye
+
+
+
+
+constructor chaining
+________________________
+
+this() :    it call own class zero argument constructor 
+
+ class X
+ {
+ 	X()
+ 	{
+         System.out.println("bye");
+ 	}
+ 	X(int a)
+ 	{
+ 		this(); // it call own class zero argumnet constructor
+ 		//super()  that must be first line   both this() and super() write inside constructor not possible
+            System.out.println("hi  " + a);
+ 	}
+ 
+ }
+
+ class Test
+{
+	
+		public static void main(String arg[])
+		{
+			
+		   X ob=new X(10);	
+		   
+
+		}
+}
+
+o/p:
+bye
+hi  10
+
+
+
+ class X
+ {
+ 	X()
+ 	{
+            this(10); // it call parameter constructor  own class
+         System.out.println("bye");
+ 	}
+ 	X(int a)
+ 	{
+ 		
+            System.out.println("hi  " + a);
+ 	}
+ 
+ }
+
+
+ class Test
+{
+	
+		public static void main(String arg[])
+		{
+			
+		   X ob=new X();	
+		   
+
+		}
+}
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>java Test
+hi  10
+bye
+
+
+ 2. Constructor Chaining using super() (Parent Class)
+
+
+ class Person {
+    Person() {
+        System.out.println("Person constructor");
+    }
+}
+
+class Employee extends Person {
+    Employee() {
+        super();  // Calls Person's constructor
+        System.out.println("Employee constructor");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee e = new Employee();
+    }
+}
+
+
+
+
+
+this() and super() must be the first statement in the constructor.
+
+You cannot use both this() and super() in the same constructor.
+
+Java automatically adds super() if not explicitly specified in subclass constructor
+
+Why Use Constructor Chaining?
+To avoid code duplication.
+
+To create flexible object initialization.
+
+To centralize logic in one constructor and reuse.
+
+
+
+
+class BankAccount {
+    String name;
+    String accNo;
+    double balance;
+
+    // Constructor 1 - No details provided
+    BankAccount() {
+        this("Unnamed", "0000", 0.0);  // Constructor Chaining
+    }
+
+    // Constructor 2 - Only name provided
+    BankAccount(String name) {
+        this(name, "0000", 0.0);
+    }
+
+    // Constructor 3 - Name and account number provided
+    BankAccount(String name, String accNo) {
+        this(name, accNo, 0.0);
+    }
+
+    // Constructor 4 - All details provided
+    BankAccount(String name, String accNo, double balance) {
+        this.name = name;
+        this.accNo = accNo;
+        this.balance = balance;
+    }
+
+    void display() {
+        System.out.println("Name: " + name + ", Account No: " + accNo + ", Balance: ₹" + balance);
+    }
+}
+
+ class BankAccountTest {
+    public static void main(String[] args) {
+        BankAccount a1 = new BankAccount();
+        BankAccount a2 = new BankAccount("muna");
+        BankAccount a3 = new BankAccount("kuna", "12345");
+        BankAccount a4 = new BankAccount("Jiendra", "12346", 5000.0);
+
+        a1.display();
+        a2.display();
+        a3.display();
+        a4.display();
+    }
+}
+
+In Java, variables are classified based on their scope, lifetime, and where they are declared.

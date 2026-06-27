@@ -1,0 +1,42 @@
+inside class static method call another static method and static variable how to call
+(1)directly (better)
+(2)classname
+(3)by object refrence
+(4)by object
+inside class static method call another non static method and non static variable how to call
+
+(1)by object refrence
+(2)by object
+
+inside class non static method call another static method and non static variable how to call
+(1)directly (better)
+(2)classname
+(3)by object refrence
+(4)by object
+
+
+inside class non static method call another non static method and non static variable how to call
+(1)directly (better)
+(3)by object refrence
+(4)by object
+
+
+one class static method call another class static method and static variable
+(1)by classname (directly)
+(2)by object refernce
+(3)by object
+
+one class static method call another class non static method and non static variable
+(1)by object refernce
+(2)by object
+
+
+
+one class non static method call another class static method and static variab1e
+(1)by classname
+(2)by object refrence
+(3)by object 
+
+one class non static method call another class non static method and non static variab1e
+(1)by object refrence
+(2)by object

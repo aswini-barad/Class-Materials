@@ -1,0 +1,330 @@
+public java.lang.String substring(int);
+
+
+class Test
+{
+   public static void main(String arg[])
+   {
+       String s="welcome";
+      System.out.println(s);
+       System.out.println(s.substring(0));
+        System.out.println(s.substring(4));
+   }
+}
+
+o/p:
+welcome
+welcome
+ome
+
+class Test
+{
+   public static void main(String arg[])
+   {
+       String s="welcome";
+      System.out.println(s);
+       System.out.println(s.substring(0,3));
+        System.out.println(s.substring(2,5));
+   }
+}
+o/p:
+welcome
+wel
+lco
+
+class Test
+{
+   public static void main(String arg[])
+   {
+       String s="welcome";
+      System.out.println(s);
+       String s1=s.substring(0,3);
+        System.out.println(s1);
+   }
+}
+o/p:
+welcome
+wel
+
+replace():
+______________
+class Test
+{
+   public static void main(String arg[])
+   {
+       String s="welcome";
+      System.out.println(s);
+       String s1=s.replace('e','y');
+       System.out.println(s);
+        System.out.println(s1);
+   }
+}
+
+o/p:
+welcome
+welcome
+wylcomy
+public int indexOf(int);  serach char index
+  public int indexOf(int, int);
+  public int lastIndexOf(int);
+  public int lastIndexOf(int, int);
+
+
+class Test
+{
+   public static void main(String arg[])
+   {
+       String s="welcome";
+      System.out.println(s.indexOf('e'));
+   }
+}
+
+o/p: 1
+
+class Test
+{
+   public static void main(String arg[])
+   {
+       String s="welecome";
+      System.out.println(s.lastIndexOf('e'));
+   }
+}
+
+o/p:
+6
+
+import java.util.Scanner;
+class Test
+{
+   public static void main(String arg[])
+   {
+       String s="welcome";
+       Scanner sc=new Scanner(System.in);
+       System.out.println("enter a char ");
+       char ch=sc.next().charAt(0);
+      int i,c=0;
+      for(i=0;i<s.length();i++)
+      {
+         if(ch==s.charAt(i))
+         {
+            
+            c++;
+           break;  
+         }
+      }
+   if(c==1)
+   {
+      System.out.println(ch+" char found "+i+" postion");
+   }
+   else 
+   {
+      System.out.println(ch+" char not found ");
+   }
+   }
+}
+
+o/p:
+C:\Users\DELL\Desktop\string program>java Test
+enter a char
+e
+e char found 1 postion
+
+C:\Users\DELL\Desktop\string program>java Test
+enter a char
+y
+y char not found
+
+
+
+ public boolean startsWith(java.lang.String, int);
+  public boolean startsWith(java.lang.String);
+  public boolean endsWith(java.lang.String);
+
+import java.util.Scanner;
+class Test
+{
+   public static void main(String arg[])
+   {
+       String s="welcome";
+      System.out.println(s.startsWith("w"));
+       System.out.println(s.startsWith("wel"));
+        System.out.println(s.startsWith("xel"));
+         System.out.println(s.startsWith("co",3));
+        System.out.println(s.endsWith("e"));  
+        System.out.println(s.endsWith("ome")); 
+        System.out.println(s.endsWith("omx")); 
+   }
+}
+
+
+o/p:
+true
+true
+false
+true
+true
+true
+false
+
+
+ public java.lang.String[] split(java.lang.String, int);
+  public java.lang.String[] split(java.lang.String);
+  public static java.lang.String join(java.lang.CharSequence, java.lang.CharSequence...);
+  public static java.lang.String join(java.lang.CharSequence, java.lang.Iterable<? extends java.lang.CharSequence>);
+
+import java.util.Scanner;
+class Test
+{
+   public static void main(String arg[])
+   {
+       String s="ram is a good boy ";
+      String str[]=s.split(" ");//array of string
+      int i;
+      for(i=0;i<str.length;i++)
+      {
+      System.out.println(str[i]);
+      }
+   }
+}
+
+o/p:
+ram
+is
+a
+good
+boy
+
+import java.util.Scanner;
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+       String s="ram is a good boy ";
+      String str[]=s.split(" ");//array of string
+    
+        // delimiter is "<" and elements are "Four", "Five", "Six", "Seven"
+        String gfg1 = String.join(" ",str[0],str[1],str[2],str[3],str[4]);
+  
+        System.out.println(gfg1);
+    
+   }
+
+}
+o/p:
+ram is a good boy
+
+
+import java.util.Scanner;
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+       String s="ram is a good boy ";
+      String str[]=s.split(" ");//array of string
+    
+        // delimiter is "<" and elements are "Four", "Five", "Six", "Seven"
+        int i;
+         String gfg1="";
+         String x="";
+        for(i=0;i<str.length;i++)
+        {
+         x=x+String.join("#",gfg1,str[i]);
+        }
+        System.out.println(x);
+    
+   }
+
+}
+
+
+
+
+array of string 
+__________________
+
+it is collection of string.
+
+import java.util.Scanner;
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+       String colo1="red";
+       String color2="blue";
+       String color3="cyan";
+
+       String color[]={"red","blue","cyna"};//array of string initlization in single line
+              int i;
+       for(i=0;i<color.length;i++)
+       {
+         System.out.println(color[i]);
+       }
+       System.out.println(color[0].charAt(1));
+       System.out.println(color[0].length());
+       System.out.println(color[0].toUpperCase());
+   }
+
+}
+
+o/p:
+red
+blue
+cyna
+e
+3
+RED
+
+
+import java.util.Scanner;
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      Scanner sc=new Scanner(System.in);
+      String name[]=new String[5];
+      int i;
+      for(i=0;i<name.length;i++)
+      {
+         System.out.println("enter name "+(i+1));
+          name[i]=sc.nextLine();
+      }
+      System.out.println("name are\n");
+      for(i=0;i<name.length;i++)
+      {
+         if(i%2==1)
+         {
+           System.out.println(name[i].toUpperCase()); 
+         }
+         else 
+         {
+            System.out.println(name[i]);
+         }
+         
+      }
+   }
+
+}
+
+
+o/p:
+enter name 1
+muna das
+enter name 2
+kuna das
+enter name 3
+luna das
+enter name 4
+rita das
+enter name 5
+gita das
+name are
+
+muna das
+KUNA DAS
+luna das
+RITA DAS
+gita das

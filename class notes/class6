@@ -1,0 +1,396 @@
+wap display hi msg 5 times
+_____________________
+sop("hi");
+sop("hi");
+sop("hi");
+sop("hi");
+sop("hi");
+
+
+solve this type problem using loop
+____________________________________
+int i;
+for(i=1;i<=5;i++)
+{
+	System.out.println("hi");
+}
+
+
+sop("A");
+sop("B");
+sop("C");
+sop("A");
+sop("B");
+sop("C");
+sop("A");
+sop("B");
+sop("C");
+
+
+solve this type problem using loop
+____________________________________
+int i;
+for(i=1;i<=3;i++)
+{
+	System.out.println("A");
+	System.out.println("B");
+	System.out.println("C");
+}
+
+
+sop("A");
+sop("B");
+sop("C");
+sop("D");
+sop("A");
+sop("B");
+sop("C");
+sop("E");
+sop("A");
+sop("B");
+sop("C");
+sop("F");
+
+some statment repeated continously then you choose loop
+
+some statement repeated after some time then choose method
+
+method : it is block.
+2 types of method 
+(a)userdefined method (that name must be valid identifier)
+(b)predefined method  (println(),nextInt(),.....)
+
+How to defined method
+_________________
+
+modifier modifier returntype  methodname(formal argument)
+{
+	
+   logic
+}
+
+
+Example
+_____________
+public static void main(String arg[])
+{
+
+	logic
+
+}
+
+
+public static void add(int no1,int no2)
+{
+	logic;
+}
+
+
+public  void add(int no1,int no2)
+{
+	logic;
+}
+
+static  void add(int no1,int no2)
+{
+	logic;
+}
+
+ void add(int no1,int no2)
+{
+	logic;
+}
+
+How to execute method  or method call
+_________________________________________
+syntax:
+methodname(actual argument);
+example
+__________
+add(10,20);
+
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	sop("A");
+	sop("B");
+	sop("C");
+	sop("D");
+	sop("A");
+	sop("B");
+	sop("C");
+	sop("E");
+	sop("A");
+	sop("B");
+	sop("C");
+	sop("F");
+	}
+}
+
+solve use method 
+____________________
+
+
+
+class Test
+{
+    static void show()
+    {
+        sop("A");
+		sop("B");
+		sop("C");
+    }
+	public static void main(String arg[])
+	{
+	
+	
+	}
+}
+
+o/p:
+no output
+
+
+class Test
+{
+    static void show()
+    {
+        sop("A");
+		sop("B");
+		sop("C");
+    }
+	public static void main(String arg[])
+	{
+	   show();
+	
+	}
+}
+
+o/p:
+A
+B
+C
+
+
+
+class Test
+{
+    static void show()
+    {
+        sop("A");
+		sop("B");
+		sop("C");
+    }
+	public static void main(String arg[])
+	{
+	   show();
+	
+	}
+}
+
+o/p:
+A
+B
+C
+A
+B
+C
+
+class Test
+{
+    static void show()
+    {
+        sop("A");
+		sop("B");
+		sop("C");
+    }
+	public static void main(String arg[])
+	{
+	   show();
+	   sop("D");
+	   show();
+	   sop("E");
+	   show();
+	   sop("F");
+	
+	}
+}
+o/p:
+A
+B
+C
+D
+A
+B
+C
+E
+A
+B
+C
+F
+
+
+import java.util.Scanner;
+class Test
+{
+    static void add()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter two nos ");
+        int no1=sc.nextInt();
+        int no2=sc.nextInt();
+        int s=no1+no2;
+        System.out.println("sum="+s);
+        return ;
+    }
+	public static void main(String arg[])
+	{
+	  add();
+
+	
+	}
+}
+
+
+we can write method program 4 way
+_____________________________
+(1)no return value no argument
+
+import java.util.Scanner;
+class Test
+{
+    static void add()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter two nos ");
+        int no1=sc.nextInt();
+        int no2=sc.nextInt();
+        int s=no1+no2;
+        System.out.println("sum="+s);
+        return ;
+    }
+	public static void main(String arg[])
+	{
+	  add();
+	  
+	
+	}
+}
+(2)no return value with argument
+
+import java.util.Scanner;
+class Test
+{
+    static void add(int no1,int no2)
+    {
+        
+        int s=no1+no2;
+        System.out.println("sum="+s);
+        return ;
+    }
+	public static void main(String arg[])
+	{
+	  Scanner sc=new Scanner(System.in);
+        System.out.println("enter two nos ");
+        int no1=sc.nextInt();
+        int no2=sc.nextInt();
+	  add(no1,no2);
+	  
+	}
+}
+(3)return value with no argumnet
+import java.util.Scanner;
+class Test
+{
+    static int add()
+    {
+         Scanner sc=new Scanner(System.in);
+        System.out.println("enter two nos ");
+        int no1=sc.nextInt();
+        int no2=sc.nextInt();
+        int s=no1+no2;
+       
+        return s;
+    }
+	public static void main(String arg[])
+	{
+	 
+	  int res=add();
+	  System.out.println("sum="+res);
+	  
+	}
+}
+(4)return value with argument
+
+
+import java.util.Scanner;
+class Test
+{
+    static int add(int no1,int no2)
+    {
+         
+        int s=no1+no2;
+       
+        return s;
+    }
+	public static void main(String arg[])
+	{
+	 Scanner sc=new Scanner(System.in);
+        System.out.println("enter two nos ");
+        int no1=sc.nextInt();
+        int no2=sc.nextInt();
+	  int res=add(no1,no2);
+	  System.out.println("sum="+res);
+	  
+	}
+}
+//Types of parameter in java
+//1.No parmeter
+class Demo {
+    static void show() {
+        System.out.println("Hello");
+    }
+
+    public static void main(String[] args) {
+        show();
+    }
+}
+//2.Single parameter
+class Demo {
+    static void square(int n) {
+        System.out.println("Square = " + (n * n));
+    }
+
+    public static void main(String[] args) {
+        square(5);
+    }
+}
+//3.Multiple parameter
+class Demo {
+    static void add(int a, int b) {
+        System.out.println("Sum = " + (a + b));
+    }
+
+    public static void main(String[] args) {
+        add(10, 20);
+    }
+}
+//4.Variable length parameter
+class Demo {
+    static void sum(int... numbers) {
+        int total = 0;
+
+        for (int n : numbers) {
+            total += n;
+        }
+
+        System.out.println("Sum = " + total);
+    }
+
+    public static void main(String[] args) {
+        sum(10, 20);
+        sum(1, 2, 3, 4, 5);
+    }
+}

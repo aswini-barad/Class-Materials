@@ -1,0 +1,416 @@
+//Pattern Question
+1 2 3 4
+
+sop("1 2 3 4");
+
+1 2 3 4 5
+
+sop("1 2 3 4 5");
+
+
+1 2 3 4
+int j;
+for(j=1;j<=4;j++)
+{
+	System.out.print(j+"\t");
+}
+System.out.println();
+
+
+1 2 3 4 5
+int j;
+for(j=1;j<=5;j++)
+{
+	System.out.print(j+"\t");
+}
+System.out.println();
+
+
+
+int r=4;
+int j;
+for(j=1;j<=r;j++)
+{
+	System.out.print(j+"\t");
+}
+System.out.println();
+
+
+Scanner sc=new Scanner(System.in);
+System.out.println("enter a range ");
+int r=sc.nextInt();
+int j;
+for(j=1;j<=r;j++)
+{
+	System.out.print(j+"\t");
+}
+System.out.println();
+
+
+
+
+4 3 2 1
+int j;
+for(j=4;j>=1;j--)
+{
+	System.out.print(j+"\t");
+}
+System.out.println();
+
+
+* * * *
+int j;
+for(j=4;j>=1;j--)
+{
+	System.out.print("*"+"\t");
+}
+System.out.println();
+
+
+1 1 1 1 
+int j;
+for(j=4;j>=1;j--)
+{
+	System.out.print("1\t");
+}
+System.out.println();
+
+
+
+
+
+1 2 3 4
+1 2 3 4
+1 2 3 4
+
+int i,j;
+for(i=1;i<=3;i++)
+{
+	for(j=1;j<=4;j++)
+	{
+		System.out.print(j+"\t");
+	}
+	System.out.println();
+}
+
+1 1 1 1
+2 2 2 2
+3 3 3 3
+
+int i,j;
+for(i=1;i<=3;i++)
+{
+	for(j=1;j<=4;j++)
+	{
+		System.out.print(i+"\t");
+	}
+	System.out.println();
+}
+
+
+* * * *
+* * * *
+* * * *
+
+int i,j;
+for(i=1;i<=3;i++)
+{
+	for(j=1;j<=4;j++)
+	{
+		System.out.print("*\t");
+	}
+	System.out.println();
+}
+
+1 2  3 4
+1 2  3 4
+1 2  3 4
+
+int i,j;
+for(i=3;i>=1;i--)
+{
+	for(j=1;j<=4;j++)
+	{
+		System.out.print(j+"\t");
+	}
+	System.out.println();
+}
+
+
+3 3 3 3
+2 2 2 2
+1 1 1 1
+
+int i,j;
+for(i=3;i>=1;i--)
+{
+	for(j=1;j<=4;j++)
+	{
+		System.out.print(i+"\t");
+	}
+	System.out.println();
+}
+
+
+
+4 3 2 1 
+
+int j;
+for(j=4;j>=1;j--)
+{
+	System.out.print(j+"\t");
+}
+System.out.println();
+
+
+
+
+4 3 2 1 
+4 3 2 1
+4 3 2 1
+
+int i,j;
+for(i=1;i<=3;i++)
+{
+	for(j=4;j>=1;j--)
+	{
+		System.out.print(j+"\t");
+	}
+	System.out.println();
+}
+
+1 2  3 4
+1 2  3
+1 2
+1
+
+
+
+int j;
+for(i=4;i>=1;i--)
+{
+	for(j=1;j<=i;j++)
+	{
+		System.out.print(j+"\t");
+	}
+	System.out.println();
+}
+
+
+1
+1 2
+1 2 3
+1 2 3 4
+int j;
+for(i=1;i<=4;i++)
+{
+	for(j=1;j<=i;j++)
+	{
+		System.out.print(j+"\t");
+	}
+	System.out.println();
+}
+
+
+4 3 2 1
+4 3 2
+4 3 
+4
+
+
+int i,j;
+for(i=1;i<=4;i++)
+{
+	for(j=4;j>=i;--)
+	{
+		System.out.print(j+"\t");
+	}
+	System.out.println();
+}
+
+
+4
+4 3
+4 3 2
+4 3 2 1
+
+
+int i,j;
+for(i=4;i>=1;i--)
+{
+	for(j=4;j>=i;j--)
+	{
+		System.out.print(j+"\t");
+	}
+	System.out.println();
+}
+
+
+1
+2 1
+3 2 1
+4 3 2 1
+
+
+
+
+for(i=1;i<=4;i++)
+for(j=i;j>=1;j--)
+
+
+4 3 2 1
+3 2 1
+2 1
+1
+
+for(i=4;i>=1;i--)
+for(j=i;j>=1;j--)
+
+
+
+
+4
+3 4
+2 3 4
+1 2 3 4
+
+for(i=4;i>=1;i--)
+for(j=i;j<=4;j++)
+
+
+
+
+1 2 3 4
+2 3 4
+3 4
+4
+for(i=1;i<=4;i++)
+for(j=i;j<=4;j++)
+
+
+
+A B  C D
+
+int j;
+for(j=65;j<=68;j++)
+{
+	System.out.print(char(j)+"\t");
+}
+System.out.println();
+
+D C B A
+int j;
+for(j=68;j>=65;j--)
+{
+	System.out.print(char(j)+"\t");
+}
+System.out.println();
+
+
+
+A B  C D
+A B C D
+A B C D
+int i,j;
+for(i=1;i<=3;i++)
+{
+	for(j=65;j<=68;j++)
+	{
+		System.out.print(char(j)+"\t");
+	}
+	System.out.println();
+}
+
+
+
+A B  C D
+A B C D
+A B C D
+int i,j;
+for(i=65;i<=67;i++)
+{
+	for(j=65;j<=68;j++)
+	{
+		System.out.print(char(j)+"\t");
+	}
+	System.out.println();
+}
+
+A  A A A
+B  B B B
+C  C C C
+
+int i,j;
+for(i=65;i<=67;i++)
+{
+	for(j=65;j<=68;j++)
+	{
+		System.out.print(char(i)+"\t");
+	}
+	System.out.println();
+}
+
+C C C C
+B B B B
+A A A A
+
+int i,j;
+for(i=67;i<=65;i--)
+{
+	for(j=65;j<=68;j++)
+	{
+		System.out.print(char(i)+"\t");
+	}
+	System.out.println();
+}
+
+
+
+D C B A
+D C B A
+D C B A
+
+
+int i,j;
+for(i=65;i<=67;i++)
+{
+	for(j=68;j>=65;j--)
+	{
+		System.out.print(char(i)+"\t");
+	}
+	System.out.println();
+}
+
+
+
+A
+A B
+A B C
+A B C D
+
+for(i=65;i<=68;i++)
+for(j=65;j<=i;j++)
+	System.out.print(char(j)+"\t");
+
+A B C D
+A B C
+A B 
+A
+
+for(i=68;i>=65;i--)
+for(j=65;j<=i;j++)
+	System.out.print(char(j)+"\t");
+
+
+
+
+A
+B A
+C B A
+D C B A
+
+
+D
+C D
+B C D
+A B C D

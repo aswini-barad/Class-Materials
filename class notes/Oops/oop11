@@ -1,0 +1,510 @@
+interface 
+_________________
+
+interface interfacename
+{
+	
+
+}
+in java8 before interface contain only public abstract method and public final static data member .
+
+not allow  constructor  static and non static block  ,.....
+
+we can  not create  object only refrence.
+
+reat — let's focus on interface in Java 7, which means:
+
+✅ No default or static methods (those were introduced in Java 8)
+✅ All methods are implicitly public and abstract
+✅ All fields are public static final (constants)
+✅ Interfaces are used only to define contracts, not to provide implementation
+
+
+
+In Java, an interface is a reference type, similar to a class, that can contain only constants, method signatures, default methods, static methods, and nested types. The methods in interfaces are abstract by default (until Java 8+, which added default and static methods).
+
+
+Java allows a class to implement  interfaces
+
+
+interface A
+{
+	void show(); //publlic abstract void show();
+
+}
+class B implements A
+{
+    public  void show()
+    {
+    	System.out.println("show method ");
+    }
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+		//A ob=new A();  error
+		A ob=new B();
+		ob.show();
+	}
+}
+
+
+
+
+
+
+
+interface A
+{
+	void show(); //publlic abstract void show();
+   int x=10;  //public static final int x=10;
+}
+class B implements A
+{
+    public  void show()
+    {
+    	System.out.println("show method ");
+    }
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+		//A ob=new A();  error
+		A ob=new B();
+		ob.show();
+		System.out.println(A.x);
+		System.out.println(B.x);
+	}
+}
+
+
+
+
+multiple inhertiance support by interface 
+_____________________________________________
+//multiple inertiance  support by interfcae
+interface A
+{
+	void show(); //publlic abstract void show();
+   
+}
+interface B
+{
+	void disp();
+}
+class C implements A,B
+{
+    public  void show()
+    {
+    	System.out.println("show method ");
+    }
+    public  void disp()
+    {
+    	System.out.println("disp method ");
+    }
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+		A ob=new C();
+		ob.show();
+		//ob.disp(); error
+		B obj=new C();
+		obj.disp();
+		//obj.show();// error
+	C obj1=new C();
+	obj1.show();
+	obj1.disp();
+	}
+}
+
+
+
+
+
+//multiple inertiance  support by interfcae
+interface A
+{
+	void show(); //publlic abstract void show();
+   int x=10;
+}
+interface B
+{
+	void show();
+	int x=20;
+}
+class C implements A,B
+{
+    public  void show()
+    {
+    	System.out.println("show method ");
+    	//System.out.println(x); error
+    	System.out.println(A.x);
+    	System.out.println(B.x);
+    }
+  
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+		A ob=new C();
+		ob.show();
+		
+	}
+}
+
+
+
+
+
+
+//multiple inertiance  support by interfcae
+interface A
+{
+	void show(); //publlic abstract void show();
+  
+}
+interface B extends A
+{
+	void disp();
+	
+}
+class C implements B
+{
+    public  void show()
+    {
+    	System.out.println("show method ");
+    }
+     public  void disp()
+    {
+    	System.out.println("disp method ");
+    }
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+		B ob=new C();
+		ob.show();
+		ob.disp();
+		
+	}
+}
+
+
+
+
+
+
+
+//multiple inertiance  support by interfcae
+interface A
+{
+	void show(); //publlic abstract void show();
+  
+}
+interface B
+{
+	void look();
+}
+interface C extends A,B
+{
+	void disp();
+	
+}
+class D implements C
+{
+    public  void show()
+    {
+    	System.out.println("show method ");
+    }
+     public  void disp()
+    {
+    	System.out.println("disp method ");
+    }
+     public  void look()
+    {
+    	System.out.println("look method ");
+    }
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+		C ob=new D();
+		ob.show();
+		ob.disp();
+		ob.look();
+		
+	}
+}
+
+
+
+
+
+
+
+
+interface A
+{
+	void show(); //publlic abstract void show();
+  
+}
+interface B
+{
+	void look();
+}
+class C
+{
+	void disp()
+	{
+		System.out.println("disp method ");
+	}
+	
+}
+class D  extends C  implements A,B
+{
+    public  void show()
+    {
+    	System.out.println("show method ");
+    }
+   
+     public  void look()
+    {
+    	System.out.println("look method ");
+    }
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+		C ob=new D();
+		ob.show();
+		ob.disp();
+		ob.look();
+		
+	}
+}
+
+public class java.util.ArrayList<E> extends java.util.AbstractList<E> implements java.util.List<E>, java.util.RandomAccess, java.lang.Cloneable, java.io.Serializable 
+
+adapter class
+________________________
+
+
+In Java AWT/Swing, an adapter class is a special helper class that provides empty (default) implementations of all methods in a listener interface.
+
+✅ Why Use Adapter Classes?
+Some listener interfaces (like WindowListener) have multiple methods. If you implement the interface directly, you're forced to override all methods, even if you're only interested in one.
+
+Adapter classes solve this by:
+
+Providing empty implementations of all methods.
+
+Letting you override only the methods you need.
+//adapter class
+interface A
+{
+	void f1();
+	void f2();
+	int f3();
+}
+
+abstract class B implements A  // B is known as adaapter class
+{
+	public void f1(){ }
+	public void f2(){ }
+	public int f3(){ return 0; }
+}
+class C extends B
+{
+      public void f2(){ 
+      	System.out.println("f2 method ");
+      }
+}
+
+
+class Test  
+{
+	public static void main(String arg[])
+	{
+         A ob=new C();
+         ob.f2();
+	}
+}
+
+/*
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javap java.awt.event.WindowListener
+Compiled from "WindowListener.java"
+public interface java.awt.event.WindowListener extends java.util.EventListener {
+  public abstract void windowOpened(java.awt.event.WindowEvent);
+  public abstract void windowClosing(java.awt.event.WindowEvent);
+  public abstract void windowClosed(java.awt.event.WindowEvent);
+  public abstract void windowIconified(java.awt.event.WindowEvent);
+  public abstract void windowDeiconified(java.awt.event.WindowEvent);
+  public abstract void windowActivated(java.awt.event.WindowEvent);
+  public abstract void windowDeactivated(java.awt.event.WindowEvent);
+}
+
+*/
+
+
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javap java.awt.event.WindowAdapter
+Compiled from "WindowAdapter.java"
+public abstract class java.awt.event.WindowAdapter implements java.awt.event.WindowListener,java.awt.event.WindowStateListener,java.awt.event.WindowFocusListener {
+  protected java.awt.event.WindowAdapter();
+  public void windowOpened(java.awt.event.WindowEvent);
+  public void windowClosing(java.awt.event.WindowEvent);
+  public void windowClosed(java.awt.event.WindowEvent);
+  public void windowIconified(java.awt.event.WindowEvent);
+  public void windowDeiconified(java.awt.event.WindowEvent);
+  public void windowActivated(java.awt.event.WindowEvent);
+  public void windowDeactivated(java.awt.event.WindowEvent);
+  public void windowStateChanged(java.awt.event.WindowEvent);
+  public void windowGainedFocus(java.awt.event.WindowEvent);
+  public void windowLostFocus(java.awt.event.WindowEvent);
+}
+
+
+
+
+
+
+Marker Interface in Java
+A marker interface is an interface without any methods or fields. It simply marks (or tags)
+ a class to indicate it has a special property.
+
+
+
+public interface MyMarker {}  // No methods
+Then a class can implement it:
+
+
+public class MyClass implements MyMarker {
+    
+}
+
+
+ Purpose of Marker Interface
+Marker interfaces are used to convey metadata about a class to the JVM or frameworks at runtime, without enforcing any method implementation.
+
+
+
+
+ Common Marker Interfaces in Java
+Interface	Package	Purpose
+Serializable	java.io	Marks class for serialization (object to byte stream)
+Cloneable	java.lang	Marks class that supports cloning via .clone()
+Remote	java.rmi	Marks class to be used for remote method invocation
+Readable	java.lang	Marks object that can be the target of a Scanner
+
+
+
+Java 8 Interface Enhancements: default and static Methods
+___________________________________________________________________
+Java 8 introduced two powerful features in interfaces:
+
+(1)default methods
+
+(2)static methods
+
+These allow interfaces to provide method implementations, which was not possible before Java 8.
+
+default Methods in Interfaces
+✅ Purpose:
+Allows an interface to provide a default implementation that can be inherited by implementing classe
+
+
+
+interface MyInterface {
+    default void greet() {
+        System.out.println("Hello from MyInterface");
+    }
+}
+
+class MyClass implements MyInterface {
+    // No need to override greet() unless customization is needed
+}
+
+public class Test {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.greet();  // Output: Hello from MyInterface
+    }
+}
+
+
+
+2. static Methods in Interfaces
+✅ Purpose:
+Allows defining utility methods related to the interface, similar to static methods in classes.
+
+interface MathUtil {
+    static int square(int x) {
+        return x * x;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        int result = MathUtil.square(5);
+        System.out.println(result);  // Output: 25
+    }
+}
+
+
+
+
+ Comparison: default vs static
+Feature	default method	static method
+Can be inherited?	✅ Yes	❌ No (must call using interface name)
+Can be overridden?	✅ Yes	❌ No
+Called on	Object of class implementing it	Interface name
+Purpose	Extend interface functionality	Utility/helper method
+
+
+
+
+
+interface A {
+    default void show() {
+        System.out.println("A's show()");
+    }
+}
+
+interface B {
+    default void show() {
+        System.out.println("B's show()");
+    }
+}
+
+class C implements A, B {
+    public void show() {
+        A.super.show();  // Resolve conflict
+        B.super.show();
+        System.out.println("C's own show()");
+    }
+}
+
+
+
+
+Summary
+Feature	Before Java 8	Java 8+
+Interface methods with body	❌ Not allowed	✅ default and static allowed
+Multiple inheritance support	❌ Limited	✅ via default methods
+Utility methods	In utility classes	✅ Now in interfaces via static

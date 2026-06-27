@@ -1,0 +1,548 @@
+StringBuffer is a predefined class.
+it is a final class
+it is a mutable.
+
+
+String equals()  method  contant   compare
+
+StringBuffer  equals()     refernce  compare
+
+
+
+public final class java.lang.StringBuffer extends java.lang.AbstractStringBuilder implements java.io.Serializable,java.lang.CharSequence {
+  static final long serialVersionUID;
+public java.lang.StringBuffer();
+  public java.lang.StringBuffer(int);
+  public java.lang.StringBuffer(java.lang.String);
+  public java.lang.StringBuffer(java.lang.CharSequence);
+  public synchronized int length();
+  public synchronized int capacity();
+  public synchronized void ensureCapacity(int);
+  public synchronized void trimToSize();
+  public synchronized void setLength(int);
+  public synchronized char charAt(int);
+  public synchronized int codePointAt(int);
+  public synchronized int codePointBefore(int);
+  public synchronized int codePointCount(int, int);
+  public synchronized int offsetByCodePoints(int, int);
+  public synchronized void getChars(int, int, char[], int);
+  public synchronized void setCharAt(int, char);
+  public synchronized java.lang.StringBuffer append(java.lang.Object);
+  public synchronized java.lang.StringBuffer append(java.lang.String);
+  public synchronized java.lang.StringBuffer append(java.lang.StringBuffer);
+  synchronized java.lang.StringBuffer append(java.lang.AbstractStringBuilder);
+  public synchronized java.lang.StringBuffer append(java.lang.CharSequence);
+  public synchronized java.lang.StringBuffer append(java.lang.CharSequence, int, int);
+  public synchronized java.lang.StringBuffer append(char[]);
+  public synchronized java.lang.StringBuffer append(char[], int, int);
+  public synchronized java.lang.StringBuffer append(boolean);
+  public synchronized java.lang.StringBuffer append(char);
+  public synchronized java.lang.StringBuffer append(int);
+  public synchronized java.lang.StringBuffer appendCodePoint(int);
+  public synchronized java.lang.StringBuffer append(long);
+  public synchronized java.lang.StringBuffer append(float);
+  public synchronized java.lang.StringBuffer append(double);
+  public synchronized java.lang.StringBuffer delete(int, int);
+  public synchronized java.lang.StringBuffer deleteCharAt(int);
+  public synchronized java.lang.StringBuffer replace(int, int, java.lang.String);
+  public synchronized java.lang.String substring(int);
+  public synchronized java.lang.CharSequence subSequence(int, int);
+  public synchronized java.lang.String substring(int, int);
+  public synchronized java.lang.StringBuffer insert(int, char[], int, int);
+  public synchronized java.lang.StringBuffer insert(int, java.lang.Object);
+  public synchronized java.lang.StringBuffer insert(int, java.lang.String);
+  public synchronized java.lang.StringBuffer insert(int, char[]);
+  public java.lang.StringBuffer insert(int, java.lang.CharSequence);
+  public synchronized java.lang.StringBuffer insert(int, java.lang.CharSequence, int, int);
+  public java.lang.StringBuffer insert(int, boolean);
+  public synchronized java.lang.StringBuffer insert(int, char);
+  public java.lang.StringBuffer insert(int, int);
+  public java.lang.StringBuffer insert(int, long);
+  public java.lang.StringBuffer insert(int, float);
+  public java.lang.StringBuffer insert(int, double);
+  public int indexOf(java.lang.String);
+  public synchronized int indexOf(java.lang.String, int);
+  public int lastIndexOf(java.lang.String);
+  public synchronized int lastIndexOf(java.lang.String, int);
+  public synchronized java.lang.StringBuffer reverse();
+  public synchronized java.lang.String toString();
+  public java.lang.AbstractStringBuilder reverse();
+  public java.lang.AbstractStringBuilder insert(int, double);
+  public java.lang.AbstractStringBuilder insert(int, float);
+  public java.lang.AbstractStringBuilder insert(int, long);
+  public java.lang.AbstractStringBuilder insert(int, int);
+  public java.lang.AbstractStringBuilder insert(int, char);
+  public java.lang.AbstractStringBuilder insert(int, boolean);
+  public java.lang.AbstractStringBuilder insert(int, java.lang.CharSequence, int, int);
+  public java.lang.AbstractStringBuilder insert(int, java.lang.CharSequence);
+  public java.lang.AbstractStringBuilder insert(int, char[]);
+  public java.lang.AbstractStringBuilder insert(int, java.lang.String);
+  public java.lang.AbstractStringBuilder insert(int, java.lang.Object);
+  public java.lang.AbstractStringBuilder insert(int, char[], int, int);
+  public java.lang.AbstractStringBuilder replace(int, int, java.lang.String);
+  public java.lang.AbstractStringBuilder deleteCharAt(int);
+  public java.lang.AbstractStringBuilder appendCodePoint(int);
+  public java.lang.AbstractStringBuilder delete(int, int);
+  public java.lang.AbstractStringBuilder append(double);
+  public java.lang.AbstractStringBuilder append(float);
+  public java.lang.AbstractStringBuilder append(long);
+  public java.lang.AbstractStringBuilder append(int);
+  public java.lang.AbstractStringBuilder append(char);
+  public java.lang.AbstractStringBuilder append(boolean);
+  public java.lang.AbstractStringBuilder append(char[], int, int);
+  public java.lang.AbstractStringBuilder append(char[]);
+  public java.lang.AbstractStringBuilder append(java.lang.CharSequence, int, int);
+  public java.lang.AbstractStringBuilder append(java.lang.CharSequence);
+  java.lang.AbstractStringBuilder append(java.lang.AbstractStringBuilder);
+  public java.lang.AbstractStringBuilder append(java.lang.StringBuffer);
+  public java.lang.AbstractStringBuilder append(java.lang.String);
+  public java.lang.AbstractStringBuilder append(java.lang.Object);
+  public java.lang.Appendable append(char) throws java.io.IOException;
+  public java.lang.Appendable append(java.lang.CharSequence, int, int) throws java.io.IOException;
+  public java.lang.Appendable append(java.lang.CharSequence) throws java.io.IOException;
+  static {};
+}
+
+
+import java.util.Scanner;
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer();
+      System.out.println(s.capacity());
+      s.append("abcdefghijkl");
+       System.out.println(s.capacity());
+   }
+
+}
+o/p:
+16
+16
+
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer();
+      System.out.println(s.capacity());
+      s.append("abcdefghijklmnopqrs");
+       System.out.println(s.capacity());
+   }
+
+}
+o/p:
+16
+34
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer(20);
+      System.out.println(s.capacity());
+      s.append("abcdefghijklmnopqrstuvw");
+       System.out.println(s.capacity());
+   }
+
+}
+o/p:
+20
+42
+
+
+//predefined method in StringBuffer
+
+append()
+_____________
+add string,integr,... in last
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer("hi");
+      System.out.println(s);
+       s.append("ram");
+       s.append(10);
+       s.append(12.34);
+       s.append(true);
+      System.out.println(s);
+   }
+
+}
+
+o/p:
+hi
+hiram1012.34true
+
+
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer("welme");
+      System.out.println(s);
+      s.insert(3,"co");
+      System.out.println(s);
+   }
+
+}
+
+o/p:
+welme
+welcome
+
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer("welme");
+      System.out.println(s);
+      s.insert(3,125);
+      System.out.println(s);
+   }
+
+}
+
+o/p:
+welme
+wel125me
+
+
+
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer("welcome");
+      System.out.println(s);
+      s.delete(0,3);
+      System.out.println(s);
+   }
+
+}
+o/p:
+welcome
+come
+
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer("welcome");
+      System.out.println(s);
+      s.delete(3,5);
+      System.out.println(s);
+   }
+
+}
+
+
+o/p:
+welcome
+welme
+
+
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer("welcome");
+      System.out.println(s);
+      s.deleteCharAt(2);
+      System.out.println(s);
+   }
+
+}
+o/p:
+C:\Users\DELL\Desktop\string program>java Test
+welcome
+wecome
+
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer("welcome");
+      System.out.println(s);
+      s.reverse();
+      System.out.println(s);
+   }
+
+}
+
+o/p:
+welcome
+emoclew
+
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer("welcome");
+      System.out.println(s);
+      s.replace(0,3,"abc");
+      System.out.println(s);
+   }
+
+}
+o/p:
+welcome
+abccome
+
+
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer("welcome");
+      System.out.println(s.charAt(3));
+   }
+
+}
+o/p:
+c 
+
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer("welcome");
+      System.out.println(s.length());
+       System.out.println(s.substring(3));
+      System.out.println(s.charAt(3));
+   }
+
+}
+
+o/p:
+7
+come
+c
+
+StringBuffer convert to String
+________________________________
+
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer("welcome");
+      String s1="";
+      int i;
+      for(i=0;i<s.length();i++)
+      {
+         s1=s1+s.charAt(i);
+      }
+      System.out.println(s1);
+   }
+
+}
+
+o/p:
+welcome
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuffer s=new StringBuffer("welcome");
+      String s1=s.toString();
+      System.out.println(s1);
+   }
+
+}
+
+o/p:
+welcome
+
+convert string to stringBuffer
+_______________________________
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+     String s="welcome";
+     StringBuffer s1=new StringBuffer(s);
+     System.out.println(s1);
+
+   }
+
+}
+
+o/p:
+welcome
+
+
+//revese string without using loop
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+     String s="welcome";
+     StringBuffer s1=new StringBuffer(s);
+     s1.reverse();
+     s=s1.toString();
+     System.out.println(s);
+
+
+   }
+
+}
+
+o/p:
+emoclew
+
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+     
+     StringBuffer s=new StringBuffer("welcome");
+      String s1=s.toString();
+      s.delete(0,s.length());
+      s.append(s1.toUpperCase());
+      System.out.println(s);
+
+
+
+   }
+
+}
+
+
+StringBuilder
+_______________
+public final class java.lang.StringBuilder extends java.lang.AbstractStringBuilder implements java.io.Serializable,java.lang.CharSequence {
+  static final long serialVersionUID;
+  public java.lang.StringBuilder();
+  public java.lang.StringBuilder(int);
+  public java.lang.StringBuilder(java.lang.String);
+  public java.lang.StringBuilder(java.lang.CharSequence);
+  public java.lang.StringBuilder append(java.lang.Object);
+  public java.lang.StringBuilder append(java.lang.String);
+  public java.lang.StringBuilder append(java.lang.StringBuffer);
+  public java.lang.StringBuilder append(java.lang.CharSequence);
+  public java.lang.StringBuilder append(java.lang.CharSequence, int, int);
+  public java.lang.StringBuilder append(char[]);
+  public java.lang.StringBuilder append(char[], int, int);
+  public java.lang.StringBuilder append(boolean);
+  public java.lang.StringBuilder append(char);
+  public java.lang.StringBuilder append(int);
+  public java.lang.StringBuilder append(long);
+  public java.lang.StringBuilder append(float);
+  public java.lang.StringBuilder append(double);
+  public java.lang.StringBuilder appendCodePoint(int);
+  public java.lang.StringBuilder delete(int, int);
+  public java.lang.StringBuilder deleteCharAt(int);
+  public java.lang.StringBuilder replace(int, int, java.lang.String);
+  public java.lang.StringBuilder insert(int, char[], int, int);
+  public java.lang.StringBuilder insert(int, java.lang.Object);
+  public java.lang.StringBuilder insert(int, java.lang.String);
+  public java.lang.StringBuilder insert(int, char[]);
+  public java.lang.StringBuilder insert(int, java.lang.CharSequence);
+  public java.lang.StringBuilder insert(int, java.lang.CharSequence, int, int);
+  public java.lang.StringBuilder insert(int, boolean);
+  public java.lang.StringBuilder insert(int, char);
+  public java.lang.StringBuilder insert(int, int);
+  public java.lang.StringBuilder insert(int, long);
+  public java.lang.StringBuilder insert(int, float);
+  public java.lang.StringBuilder insert(int, double);
+  public int indexOf(java.lang.String);
+  public int indexOf(java.lang.String, int);
+  public int lastIndexOf(java.lang.String);
+  public int lastIndexOf(java.lang.String, int);
+  public java.lang.StringBuilder reverse();
+  public java.lang.String toString();
+  public java.lang.AbstractStringBuilder reverse();
+  public java.lang.AbstractStringBuilder insert(int, double);
+  public java.lang.AbstractStringBuilder insert(int, float);
+  public java.lang.AbstractStringBuilder insert(int, long);
+  public java.lang.AbstractStringBuilder insert(int, int);
+  public java.lang.AbstractStringBuilder insert(int, char);
+  public java.lang.AbstractStringBuilder insert(int, boolean);
+  public java.lang.AbstractStringBuilder insert(int, java.lang.CharSequence, int, int);
+  public java.lang.AbstractStringBuilder insert(int, java.lang.CharSequence);
+  public java.lang.AbstractStringBuilder insert(int, char[]);
+  public java.lang.AbstractStringBuilder insert(int, java.lang.String);
+  public java.lang.AbstractStringBuilder insert(int, java.lang.Object);
+  public java.lang.AbstractStringBuilder insert(int, char[], int, int);
+  public java.lang.String substring(int, int);
+  public java.lang.CharSequence subSequence(int, int);
+  public java.lang.String substring(int);
+  public java.lang.AbstractStringBuilder replace(int, int, java.lang.String);
+  public java.lang.AbstractStringBuilder deleteCharAt(int);
+  public java.lang.AbstractStringBuilder appendCodePoint(int);
+  public java.lang.AbstractStringBuilder delete(int, int);
+  public java.lang.AbstractStringBuilder append(double);
+  public java.lang.AbstractStringBuilder append(float);
+  public java.lang.AbstractStringBuilder append(long);
+  public java.lang.AbstractStringBuilder append(int);
+  public java.lang.AbstractStringBuilder append(char);
+  public java.lang.AbstractStringBuilder append(boolean);
+  public java.lang.AbstractStringBuilder append(char[], int, int);
+  public java.lang.AbstractStringBuilder append(char[]);
+  public java.lang.AbstractStringBuilder append(java.lang.CharSequence, int, int);
+  public java.lang.AbstractStringBuilder append(java.lang.CharSequence);
+  public java.lang.AbstractStringBuilder append(java.lang.StringBuffer);
+  public java.lang.AbstractStringBuilder append(java.lang.String);
+  public java.lang.AbstractStringBuilder append(java.lang.Object);
+  public void setCharAt(int, char);
+  public void getChars(int, int, char[], int);
+  public int offsetByCodePoints(int, int);
+  public int codePointCount(int, int);
+  public int codePointBefore(int);
+  public int codePointAt(int);
+  public char charAt(int);
+  public void setLength(int);
+  public void trimToSize();
+  public void ensureCapacity(int);
+  public int capacity();
+  public int length();
+  public java.lang.Appendable append(char) throws java.io.IOException;
+  public java.lang.Appendable append(java.lang.CharSequence, int, int) throws java.io.IOException;
+  public java.lang.Appendable append(java.lang.CharSequence) throws java.io.IOException;
+}
+
+
+
+
+class Test
+{
+   public static void main(String arg[])
+   {
+      
+      StringBuilder s=new StringBuilder("hi");
+      System.out.println(s);
+       s.append("ram");
+       s.append(10);
+       s.append(12.34);
+       s.append(true);
+      System.out.println(s);
+   }
+
+}
+
+o/p:
+hi
+hiram1012.34true
+
+String  :data fix   choose String  immutable
+StringBuffer  :   mutable    modify  at time only thread  (synchronized method)
+StringBulider  :   mutable    modify  all thread

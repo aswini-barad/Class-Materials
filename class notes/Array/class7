@@ -1,0 +1,401 @@
+array
+_________
+
+int  a=10;
+a=20;
+a=30;
+System.out.println(a);
+
+here previous 2 data loss
+
+
+
+solution:
+
+
+int a=10,b=20,c=30;
+System.out.println(a+" "+b+" "+c);   
+
+o/p:
+10  20 30 
+
+
+suppose store 100 data 100 variable .
+but good programer not create 100 variable choose array (all values must de same type.)
+
+
+single name store all data and acess data by using index.
+
+(1)
+1d array 
+(2)
+multidimesional array (2d ,3d,...)
+
+
+How to declare 1d array  
+_______________________
+
+datatype arrname[];
+or
+datatype[] arrname;
+or
+datatype  []arrname;
+
+
+How to instantion  or memory creation 
+____________________________________________
+
+datatype arrname[];
+arrname=new datatype[size];
+
+or
+datatype arrname[]=new datatype[size];
+
+
+How to initlize array 
+____________________
+
+datatype arrname[];
+arrname=new datatype[size];
+arrname[index]=literal;
+.
+.
+.
+
+single line initlization
+_________________________
+
+datatype arrname[]={list of elements};
+
+
+
+
+
+
+
+int arr[]={10,20,30};
+System.out.println(arr[0]+" "+arr[1]+" "+arr[2]);   
+
+
+o/p:
+10 20 30
+
+
+int arr[]={10,20,30,40};
+System.out.println(arr);
+System.out.println(arr.length);
+
+
+o/p:
+address
+4
+
+//display array element forward direction 
+int arr[]={10,20,30,40};
+int index;
+for(index=0;index<arr.length;index++)
+{
+	System.out.print(arr[index]+" ");
+}
+
+o/p:
+10 20 30 40
+
+//display array element backward direction 
+int arr[]={10,20,30,40};
+int index;
+for(index=arr.length-1;index>=0;index--)
+{
+	System.out.print(arr[index]+" ");
+}
+
+o/p:
+10 20 30 40
+
+
+
+//declare array instantion ,initlize and display;
+
+int arr[];   //array declartion
+arr=new int[4]; //array instantion
+arr[0]=10; //array initlization
+arr[1]=20;
+ar[2]=30;
+arr[3]=40;
+int index;
+for(index=0;index<arr.length;index++)
+{
+	System.out.print(arr[index]+" ");
+}
+
+
+
+//take 4 input form keyboad and dsiaplay it
+
+
+Scanner sc=new Scanner(System.in);
+int arr[];   //array declartion
+arr=new int[4]; //array instantion
+int index;
+System.out.println("enter 4 elements ");
+for(index=0;index<arr.length;index++)
+{
+	arr[index]=sc.nextInt();
+}
+System.out.println("elements are ");
+for(index=0;index<arr.length;index++)
+{
+	System.out.print(arr[index]+" ");
+}
+
+
+
+
+//take n number element input form keyboad and dsiaplay it
+
+
+Scanner sc=new Scanner(System.in);
+int arr[];   //array declartion
+System.out.println("enter how many element store ");
+int size=sc.nextInt();
+arr=new int[size]; //array instantion
+int index;
+System.out.println("enter "+size+" elements ");
+for(index=0;index<size;index++)
+{
+	arr[index]=sc.nextInt();
+}
+System.out.println("elements are ");
+for(index=0;index<size;index++)
+{
+	System.out.print(arr[index]+" ");
+}
+
+
+array concept
+________________
+
+int arr[]=new int[3];
+
+once array is create array size not increase not decrease.
+
+
+int arr[]=new int[3];
+System.out.println(arr); //assume arrray create 5000 location
+System.out.println(arr.length); // 3
+arr=new int[5];
+System.out.println(arr); //assume arrray create 6000 location
+System.out.println(arr.length); // 5
+
+
+assgin value
+___________
+
+int a=10;
+int b=a;
+double c=a;
+System.out.println(a+" "+b+" "+c);
+
+o/p:
+10 10 10.0
+
+
+
+
+assgin array
+________________
+when assgin array another array same type.
+int arr[]={10,20,30};
+int arr1[]=arr; //valid
+//double arr2[]=arr; //invalid 
+System.out.println(arr+" "+arr1); //5000  5000
+
+
+
+int arr[]={10,20};
+int arr1[]=arr;
+System.out.println(arr[0]+" "+arr[1]);//10 20
+System.out.println(arr1[0]+" "+arr1[1]);// 10 20
+arr[0]=30;
+arr[1]=40;
+System.out.println(arr[0]+" "+arr[1]);//30 40
+System.out.println(arr1[0]+" "+arr1[1]);// 30 40
+
+
+
+passing array element in method 
+_____________________________
+class Test
+{
+	static void show(int ele)
+	{
+	  System.out.println(ele);
+	}
+
+	public static void main(String arg[])
+	{
+	    int arr[]={10,20,30};
+	    //show(arr[0]);
+         int index;
+         for(index=0;index<arr.length;index++)
+         {
+            show(arr[index]);
+         }
+	}
+}
+
+o/p:
+10
+20
+30
+
+
+passing arraname in method
+_____________________________
+class Test
+{
+	static void show(int arr[])
+	{
+	   int index;
+         for(index=0;index<arr.length;index++)
+         {
+            System.out.println(arr[index]));
+         }
+	}
+
+	public static void main(String arg[])
+	{
+	    int arr[]={10,20,30};
+	    show(arr);
+        
+	}
+}
+
+o/p:
+10
+20
+30
+
+
+call by value 
+_________
+class Test
+{
+	static void show(int a)
+	{
+	   a=20;
+	}
+
+	public static void main(String arg[])
+	{
+	    int a=10;
+	    show(a);
+	    System.out.println(a);
+        
+	}
+}
+
+o/p:
+10
+
+call by refernce 
+_________
+class Test
+{
+	static void show(int a[])
+	{
+	   a[0]=20;
+	}
+
+	public static void main(String arg[])
+	{
+	    int a[]={10};
+	    show(a);
+	    System.out.println(a[0]);
+        
+	}
+}
+
+o/P
+20
+
+
+
+//sum of element
+
+int arr[]={5,7,8,9,12};
+int s=0;
+int index;
+for(index=0;index<arr.length;index++)
+{
+	s=s+arr[index];
+}
+System.out.println("sum of element="+s);
+
+
+find the sum of element using method 
+________________________________________
+
+
+class Test
+{
+	static void sumele(int arr[])
+	{
+	   	int s=0;
+		int index;
+		for(index=0;index<arr.length;index++)
+		{
+			s=s+arr[index];
+		}
+		System.out.println("sum of element="+s);
+	}
+
+	public static void main(String arg[])
+	{
+	   	int arr[]={5,7,8,9,12};
+		sumele(arr);
+	
+        
+	}
+}
+
+
+
+//input and sum of element using method 
+
+
+import java.util.*;
+
+class Test
+{
+	static void sumele(int arr[])
+	{
+	   	int s=0;
+		int index;
+		for(index=0;index<arr.length;index++)
+		{
+			s=s+arr[index];
+		}
+		System.out.println("sum of element="+s);
+	}
+    static void input(int arr[])
+    {
+            int index;
+            Scanner sc=new Scanner(Systen.in);
+		for(index=0;index<arr.length;index++)
+		{
+			arr[index]=sc.nextInt();
+		}
+		
+    }
+	public static void main(String arg[])
+	{
+	   Scanner sc=new Scanner(System.in);
+	   System.out.println("enter array size ");
+	   int size=sc.nextInt();
+	   	int arr[]=new int[size];
+	   	System.out.println("enter "+size+" elements");
+	   	input(arr);
+		sumele(arr); 
+	}
+}

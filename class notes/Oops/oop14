@@ -1,0 +1,158 @@
+has a type example
+_______________
+package pk;
+class A
+{
+	A()
+	{
+		System.out.println("AC");
+	}
+	void show()
+	{
+		System.out.println("show method ");
+	}
+}
+class B 
+{
+	A ob=new A();
+	B()
+	{
+		System.out.println("BC");
+	}
+}
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       B obj=new B();
+       B obj1=new B();
+       System.out.println(obj.ob);
+       System.out.println(obj1.ob);
+       obj.ob.show();
+	}
+}
+
+
+package pk;
+class AA
+{
+	AA()
+	{
+		System.out.println("AC");
+	}	
+}
+class BB
+{
+	static AA ob=new AA();
+	BB()
+	{
+		System.out.println("BC");
+	}
+}
+public class Test1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     //  BB obj=new BB();
+      // BB obj1=new BB();
+      // System.out.println(obj.ob);
+      // System.out.println(obj1.ob);
+		System.out.println(BB.ob);
+		
+     
+	}
+}
+
+
+explain about System.out.println();
+
+
+package pk;
+class MyPrintStream
+{
+	MyPrintStream()
+	{
+		
+	}
+	void println(int x)
+	{
+		System.out.println(x);
+	}
+	void println(double x)
+	{
+		System.out.println(x);
+	}
+}
+final class MySystem
+{
+	final public static MyPrintStream out=new MyPrintStream();
+	
+}
+public class Test2 {
+
+	public static void main(String[] args) {
+ 		// TODO Auto-generated method stub
+        MySystem.out.println(10);
+        MySystem.out.println(12.5);
+        System.out.println(10);
+	}
+  
+}
+
+https://chatgpt.com/share/6891994d-b464-8008-bab3-37f7628343e0
+
+package pk;
+class Person {
+    String name;
+
+    Person(String name) {
+        this.name = name;
+    }
+
+    void showPersonInfo() {
+        System.out.println("Name: " + name);
+    }
+}
+// IS-A Relationship: Employee IS-A Person
+class Employee extends Person {
+    int empId;
+    Company company;  // HAS-A Relationship
+
+    Employee(String name, int empId, Company company) {
+        super(name);  // call Person constructor
+        this.empId = empId;
+        this.company = company;
+    }
+
+    void showEmployeeInfo() {
+        showPersonInfo();  // from Person class
+        System.out.println("Employee ID: " + empId);
+        company.showCompanyInfo();  // HAS-A
+    }
+}
+class Company {
+    String companyName;
+    String location;
+
+    Company(String companyName, String location) {
+        this.companyName = companyName;
+        this.location = location;
+    }
+
+    void showCompanyInfo() {
+        System.out.println("Company: " + companyName);
+        System.out.println("Location: " + location);
+    }
+}
+
+public class EmployeeCompanyDemo {
+    public static void main(String[] args) {
+        Company c = new Company("LTLT Edutech Pvt. Ltd.", "Bhubaneswar");
+        Employee e = new Employee("Jitendra Sahoo", 101, c);
+        e.showEmployeeInfo();
+    }
+}
+
+
+
+https://chatgpt.com/share/689198db-83ec-8008-ade6-fb756c4c115a

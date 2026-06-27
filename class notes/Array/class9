@@ -1,0 +1,418 @@
+serach elemennt delete after element
+serach elemennt delete before element
+serach element insert new element after 
+serach element insert new element after  all loaction
+serach element insert new element before
+serach element insert new element after  all loaction
+serach element insert new element before all location
+
+
+assgin one array to another array
+__________________________
+
+int a=10;
+double b;
+b=a; // valid
+
+int a[]=new int[3];
+double b[]=new double[5];
+b=a; // invalid
+
+b[0]=a[0];  //valid
+
+int a[]=new int[3];
+int b[]=a;  //valid
+
+array size fixed 
+___________________________
+int arr[]=new int[5];
+arr=new int[7];
+
+
+int arr[]=new int[5];
+sop(arr);
+arr=new int[7];
+sop(arr);
+
+
+union
+intersection
+
+
+
+
+
+
+2d array
+______________
+
+How to declare 2d array
+
+datatype arrname[][];
+
+int    arr[][];
+
+How to create or instatntion  2d array
+__________________________________________
+
+datatype arrname[][];
+arrname=new datatype[r][c];
+
+or
+datatype arrname[][]=new datatype[r][c];
+
+r->collection of 1 darray 
+c->each 1d array no of elements (every row same element  matrix format)
+
+
+initlization
+____________
+arrname[rindex][cindex]=element;
+
+
+int arr[][];
+arr=new int[2][3];
+System.out.println(arr); //adddress
+System.out.println(arr[0]); //1d array address
+System.out.println(arr[0][0]); //0
+
+
+int arr[][];
+arr=new int[2][3];
+arr[0][0]=10;
+arr[0][1]=20;
+arr[0][2]=30;
+arr[1][0]=40;
+arr[1][1]=50;
+arr[1][2]=60;
+int i,j;
+for(i=0;i<2;i++)
+{
+	for(j=0lj<3;j++)
+	{
+	  System.out.print(arr[i][j]+"\t");
+	}
+	System.out.println();
+}
+
+
+
+
+int arr[][];
+arr=new int[2][3];
+arr[0][0]=10;
+arr[0][1]=20;
+arr[0][2]=30;
+arr[1][0]=40;
+arr[1][1]=50;
+arr[1][2]=60;
+int i,j;
+for(i=0;i<2;i++)
+{
+	for(j=0;j<3;j++)
+	{
+	  System.out.print(arr[i][j]+"\t");
+	}
+	System.out.println();
+}
+
+
+2d array intlizatioin in single line
+___________________________________
+
+datatype arrname[][]={list of data};
+
+
+
+
+int arr[][]={{10,20,30},{40,50,60}};
+int i,j;
+for(i=0;i<2;i++)
+{
+	for(j=0;j<3;j++)
+	{
+	  System.out.print(arr[i][j]+"\t");
+	}
+	System.out.println();
+}
+
+
+
+
+
+
+
+int arr[][]={{10,20,30},{40,50,60},{70,80,90}};
+int i,j;
+for(i=0;i<arr.length;i++)
+{
+	for(j=0;j<arr[i].length;j++)
+	{
+	  System.out.print(arr[i][j]+"\t");
+	}
+	System.out.println();
+}
+
+
+jagged array
+______________
+int arr[][]={{10,20,30},{40,50},{70}};
+int i,j;
+for(i=0;i<arr.length;i++)
+{
+	for(j=0;j<arr[i].length;j++)
+	{
+	  System.out.print(arr[i][j]+"\t");
+	}
+	System.out.println();
+}
+
+
+
+for each  loop
+___________
+
+
+for (element :arrname)
+{
+	
+}
+
+int arr[]={10,20,30,40};
+for(int ele:arr)
+{
+	System.out.println(ele);
+}
+
+display 2d array using for each loop
+_________________________________________
+
+int arr[][]={{10,20,30},{40,50},{70}};
+
+for(int i[]:arr)
+{
+	for(int j:i)
+	{
+	  System.out.print(j+"\t");
+	}
+	System.out.println();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scanner sc=new Scanner(Sydtem.in);
+int arr[][];
+arr=new int[2][3];
+System.out.println("enter 6 elements ");
+int i,j;
+
+for(i=0;i<2;i++)
+{
+	for(j=0;j<3;j++)
+	{
+	  arr[i][j]=sc.nextInt();
+	}
+	
+}
+System.out.println("elements are ");
+for(i=0;i<2;i++)
+{
+	for(j=0;j<3;j++)
+	{
+	  System.out.print(arr[i][j]+"\t");
+	}
+	System.out.println();
+}
+
+
+
+
+Scanner sc=new Scanner(Sydtem.in);
+int mark[][];
+mark=new int[3][4];
+
+int i,j;
+for(i=0;i<3;i++)
+{
+   System.out.println("enter student "+(i+1));
+	for(j=0;j<4;j++)
+	{
+	    System.out.print("enter mark :"+(j+1));
+	     mark[i][j]=sc.nextInt();
+	}
+}
+int total=0;
+System.out.println("stud\tm1\tm2\m3\m4\ttotal\tavg");
+for(i=0;i<3;i++)
+{
+      System.out.print((i+1)+"\t");
+	for(j=0;j<4;j++)
+	{
+	  System.out.print(mark[i][j]+"\t");
+	  total=total+mark[i][j];
+	}
+	System.out.println(total+"\t"+total/4);
+	total=0;
+}
+
+
+
+
+
+
+
+
+
+Scanner sc=new Scanner(Sydtem.in);
+int arr[][];
+System.out.println("enter 2d array r and col");
+int r=sc.nextInt();
+int c=sc.nextInt();
+arr=new int[r][c];
+System.out.println("enter "+r*c" elements ");
+int i,j;
+
+for(i=0;i<r;i++)
+{
+	for(j=0;j<c;j++)
+	{
+	  arr[i][j]=sc.nextInt();
+	}
+	
+}
+System.out.println("elements are ");
+for(i=0;i<r;i++)
+{
+	for(j=0;j<c;j++)
+	{
+	  System.out.print(arr[i][j]+"\t");
+	}
+	System.out.println();
+}
+
+
+passing 2d array in method
+________________________
+import java.util.*;
+class Test
+{
+	static void input(int arr[][],int r,int c)
+	{
+	       System.out.println("enter "+r*c+" elements ");
+				int i,j;
+
+				for(i=0;i<r;i++)
+				{
+					for(j=0;j<c;j++)
+					{
+					  arr[i][j]=sc.nextInt();
+					}
+					
+				}
+	}
+	static void disp(int arr[][],int r,int c)
+	{
+	     System.out.println("elements are ");
+			for(i=0;i<r;i++)
+			{
+				for(j=0;j<c;j++)
+				{
+				  System.out.print(arr[i][j]+"\t");
+				}
+				System.out.println();
+			}
+
+	}
+	public static void main(String arg[])
+	{
+	      Scanner sc=new Scanner(Sydtem.in);
+			int arr[][];
+			System.out.println("enter 2d array r and col");
+			int r=sc.nextInt();
+			int c=sc.nextInt();
+			arr=new int[r][c];
+			input(arr,r,c);
+			disp(arr,r,c);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import java.util.*;
+
+class TwoDArray {
+    int arr[][];
+    int r, c;
+    Scanner sc;
+
+    // Constructor to initialize array and take input
+    TwoDArray(int rows, int cols) {
+        sc = new Scanner(System.in);
+        r = rows;
+        c = cols;
+        arr = new int[r][c];
+
+        System.out.println("Enter " + (r * c) + " elements:");
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+    }
+
+    // Method to display array
+    void display() {
+        System.out.println("Elements are:");
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                System.out.print(arr[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
+
+ class Test {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter number of rows and columns:");
+        int rows = sc.nextInt();
+        int cols = sc.nextInt();
+
+        // Object creation → constructor will handle input
+        TwoDArray obj = new TwoDArray(rows, cols);
+
+        // Display array
+        obj.display();
+    }
+}

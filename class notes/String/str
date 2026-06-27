@@ -1,0 +1,431 @@
+String :
+
+  String is predefined class.
+  String is final class .
+  String is collection of char digit special symbole.
+"hi"   "123"   "bye3"
+
+public final class java.lang.String implements java.io.Serializable, java.lang.Comparable<java.lang.String>, java.lang.CharSequence {
+  public static final java.util.Comparator<java.lang.String> CASE_INSENSITIVE_ORDER;
+  public java.lang.String();
+  public java.lang.String(java.lang.String);
+  public java.lang.String(char[]);
+  public java.lang.String(char[], int, int);
+  public java.lang.String(int[], int, int);
+  public java.lang.String(byte[], int, int, int);
+  public java.lang.String(byte[], int);
+  public java.lang.String(byte[], int, int, java.lang.String) throws java.io.UnsupportedEncodingException;
+  public java.lang.String(byte[], int, int, java.nio.charset.Charset);
+  public java.lang.String(byte[], java.lang.String) throws java.io.UnsupportedEncodingException;
+  public java.lang.String(byte[], java.nio.charset.Charset);
+  public java.lang.String(byte[], int, int);
+  public java.lang.String(byte[]);
+  public java.lang.String(java.lang.StringBuffer);
+  public java.lang.String(java.lang.StringBuilder);
+  java.lang.String(char[], boolean);
+  public int length();
+  public boolean isEmpty();
+  public char charAt(int);
+  public int codePointAt(int);
+  public int codePointBefore(int);
+  public int codePointCount(int, int);
+  public int offsetByCodePoints(int, int);
+  void getChars(char[], int);
+  public void getChars(int, int, char[], int);
+  public void getBytes(int, int, byte[], int);
+  public byte[] getBytes(java.lang.String) throws java.io.UnsupportedEncodingException;
+  public byte[] getBytes(java.nio.charset.Charset);
+  public byte[] getBytes();
+  public boolean equals(java.lang.Object);
+  public boolean contentEquals(java.lang.StringBuffer);
+  public boolean contentEquals(java.lang.CharSequence);
+  public boolean equalsIgnoreCase(java.lang.String);
+  public int compareTo(java.lang.String);
+  public int compareToIgnoreCase(java.lang.String);
+  public boolean regionMatches(int, java.lang.String, int, int);
+  public boolean regionMatches(boolean, int, java.lang.String, int, int);
+  public boolean startsWith(java.lang.String, int);
+  public boolean startsWith(java.lang.String);
+  public boolean endsWith(java.lang.String);
+  public int hashCode();
+  public int indexOf(int);
+  public int indexOf(int, int);
+  public int lastIndexOf(int);
+  public int lastIndexOf(int, int);
+  public int indexOf(java.lang.String);
+  public int indexOf(java.lang.String, int);
+  static int indexOf(char[], int, int, java.lang.String, int);
+  static int indexOf(char[], int, int, char[], int, int, int);
+  public int lastIndexOf(java.lang.String);
+  public int lastIndexOf(java.lang.String, int);
+  static int lastIndexOf(char[], int, int, java.lang.String, int);
+  static int lastIndexOf(char[], int, int, char[], int, int, int);
+  public java.lang.String substring(int);
+  public java.lang.String substring(int, int);
+  public java.lang.CharSequence subSequence(int, int);
+  public java.lang.String concat(java.lang.String);
+  public java.lang.String replace(char, char);
+  public boolean matches(java.lang.String);
+  public boolean contains(java.lang.CharSequence);
+  public java.lang.String replaceFirst(java.lang.String, java.lang.String);
+  public java.lang.String replaceAll(java.lang.String, java.lang.String);
+  public java.lang.String replace(java.lang.CharSequence, java.lang.CharSequence);
+  public java.lang.String[] split(java.lang.String, int);
+  public java.lang.String[] split(java.lang.String);
+  public static java.lang.String join(java.lang.CharSequence, java.lang.CharSequence...);
+  public static java.lang.String join(java.lang.CharSequence, java.lang.Iterable<? extends java.lang.CharSequence>);
+  public java.lang.String toLowerCase(java.util.Locale);
+  public java.lang.String toLowerCase();
+  public java.lang.String toUpperCase(java.util.Locale);
+  public java.lang.String toUpperCase();
+  public java.lang.String trim();
+  public java.lang.String toString();
+  public char[] toCharArray();
+  public static java.lang.String format(java.lang.String, java.lang.Object...);
+  public static java.lang.String format(java.util.Locale, java.lang.String, java.lang.Object...);
+  public static java.lang.String valueOf(java.lang.Object);
+  public static java.lang.String valueOf(char[]);
+  public static java.lang.String valueOf(char[], int, int);
+  public static java.lang.String copyValueOf(char[], int, int);
+  public static java.lang.String copyValueOf(char[]);
+  public static java.lang.String valueOf(boolean);
+  public static java.lang.String valueOf(char);
+  public static java.lang.String valueOf(int);
+  public static java.lang.String valueOf(long);
+  public static java.lang.String valueOf(float);
+  public static java.lang.String valueOf(double);
+  public native java.lang.String intern();
+  public int compareTo(java.lang.Object);
+  static {};
+
+
+
+public java.lang.String();
+  public java.lang.String(java.lang.String);
+  public java.lang.String(char[]);
+  public java.lang.String(char[], int, int);
+  public java.lang.String(int[], int, int);
+  public java.lang.String(byte[], int, int, int);
+  public java.lang.String(byte[], int);
+  public java.lang.String(byte[], int, int, java.lang.String) throws java.io.UnsupportedEncodingException;
+  public java.lang.String(byte[], int, int, java.nio.charset.Charset);
+  public java.lang.String(byte[], java.lang.String) throws java.io.UnsupportedEncodingException;
+  public java.lang.String(byte[], java.nio.charset.Charset);
+  public java.lang.String(byte[], int, int);
+  public java.lang.String(byte[]);
+  public java.lang.String(java.lang.StringBuffer);
+  public java.lang.String(java.lang.StringBuilder);
+
+
+  we cAN STRING program 2 way
+  (1)assgin string literal
+  (2)using new keyword.
+
+  class Test
+  {
+     public static void main(String arg[])
+     {
+        String s="hi";
+        System.out.println(s);
+        String s1="hi";
+        System.out.println(s1);
+
+     }
+  }
+
+o/p:
+hi
+hi
+
+
+
+
+
+
+  class Test
+  {
+     public static void main(String arg[])
+     {
+        String s="hi";
+        System.out.println(s);
+        String s1="hi";
+        System.out.println(s1);
+        System.out.println(s.hashCode());
+        System.out.println(s1.hashCode());
+        System.out.println(s==s1);//reference compare   true
+         String s2="Hi";
+         System.out.println(s2);
+         System.out.println(s2.hashCode());
+          System.out.println(s==s2);//reference compare   false
+          System.out.println(s.equals(s1)); //true   contant   casesenistive
+          System.out.println(s.equals(s2));//false  //false
+           System.out.println(s.equalsIgnoreCase(s1));//true
+          System.out.println(s.equalsIgnoreCase(s2));//true
+     }
+  }
+ hi
+hi
+3329
+3329
+true
+Hi
+2337
+false
+true
+false
+true
+true
+
+
+class Test
+  {
+     public static void main(String arg[])
+     {
+        String s="hi";
+       String s1="hi";
+       String s2="hi";
+       String s3=s;
+
+     }
+  }
+
+  in this program string create only once.
+
+
+  using new keyword we crate string
+  _______________________________________
+  class Test
+  {
+     public static void main(String arg[])
+     {
+        String s=new  String("hi");
+        System.out.println(s);
+     }
+  }
+
+  o/p:
+  hi
+
+  in this program 2 object create  one  stack   one heap 
+
+  class Test
+  {
+     public static void main(String arg[])
+     {
+        String s=new  String("hi");
+        String s1=new  String("hi");
+        System.out.println(s);
+         System.out.println(s1);
+         System.out.println(s==s1);
+          System.out.println(s.equals(s1));
+     }
+  }
+
+o/p:
+hi
+hi
+false
+true
+
+
+ class Test
+  {
+     public static void main(String arg[])
+     {
+        String s=new  String("hi");
+        String s1=new  String("Hi");
+        System.out.println(s);
+         System.out.println(s1);
+         System.out.println(s==s1);
+         System.out.println(s.equals(s1));
+          System.out.println(s.equalsIgnoreCase(s1));
+     }
+  }
+hi
+Hi
+false
+false
+true
+
+
+class Test
+  {
+     public static void main(String arg[])
+     {
+        String s=new  String("hi");
+        String s1=new  String("Hi");
+      String s2="hi";
+      String s3="hi";
+       String s4="Hi";
+       System.out.println(s2==s3);
+       System.out.println(s2==s4);
+     }
+  }
+
+o/p:
+
+true
+false
+  class Test
+  {
+     public static void main(String arg[])
+     {
+        String s="welcome";
+        System.out.println(s);
+         System.out.println(s.charAt(2));
+         //s.charAt(2)='y'; error string is immutable
+
+     }
+  }
+o/p:
+error
+
+length:it is used array couny no of element
+length(): it is predefined method of string class.
+			it is used count no of char.
+
+
+//wap count no of char in a string 
+  class Test
+  {
+     public static void main(String arg[])
+     {
+        String s="welcome";
+        System.out.println(s.length());
+
+     }
+  }
+
+ o/p:
+ 7
+
+
+//wap initlize string display all letter 
+  class Test
+  {
+     public static void main(String arg[])
+     {
+        String s="welcome";
+        int i;
+        for(i=0;i<s.length();i++)
+        {
+        		System.out.println(s.charAt(i));
+         }
+     }
+  }
+o/p:
+w
+e
+l
+c
+o
+m
+e
+
+//wap initlize string display all letter  revorder
+class Test
+  {
+     public static void main(String arg[])
+     {
+        String s="welcome";
+        int i;
+        for(i=s.length()-1;i>=0;i--)
+        {
+            System.out.println(s.charAt(i));
+         }
+     }
+  }
+  o/p:
+e
+m
+o
+c
+l
+e
+w
+
+equlas()
+equalsIngonrecase()
+length()
+charAt(index)
+class Test
+  {
+     public static void main(String arg[])
+     {
+        String s="welcome";
+        String s1="ram";
+        String s2=s+s1;
+      System.out.println(s);
+      System.out.println(s1);
+        System.out.println(s2);
+        
+     }
+  }
+
+o/p:
+welcome
+ram
+welcomeram
+
+
+class Test
+  {
+     public static void main(String arg[])
+     {
+        String s="welcome";
+        //s=s+"ram";
+        //s+="ram";
+        s=s.concat("ram");
+      System.out.println(s);
+        
+     }
+  }
+
+ o/p:
+ welcomeram
+
+
+class Test
+  {
+     public static void main(String arg[])
+     {
+        String s="wE123lcoMe";
+
+      System.out.println(s.toUpperCase());
+      System.out.println(s);
+      s=s.toUpperCase();
+        System.out.println(s);
+        
+     }
+  }
+
+
+o/p:
+WE123LCOME
+wE123lcoMe
+WE123LCOME
+
+class Test
+  {
+     public static void main(String arg[])
+     {
+        String s="wE123lcoMe";
+
+      System.out.println(s.toLowerCase());
+        
+     }
+  }
+
+o/p:
+we123lcome
+
+
+//wap convert lower case to upper case  without using any predefined method
+
+//wap convert upper case to lowercase without using any predefined method
+// swap case  
+//display first letter every word
+//wap count no of uppercase lowercase  vowel constant digit space sy 
+using some predefined method
+//wap count no of uppercase lowercase  vowel constant digit space sy 
+without using  predefined method

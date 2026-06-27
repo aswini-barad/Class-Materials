@@ -1,0 +1,803 @@
+abstract class
+_________________
+
+concreate class
+________________
+
+class classname
+{
+	
+}
+
+classname objectrefencename; // object refernce   correct
+
+objectrefencename=new classname();  //object create coreect
+
+
+abstract class
+_________________
+
+abstarct class classname
+{
+	
+}
+classname objectrefencename; // object refernce   correct
+
+objectrefencename=new classname();  // error object create not allow
+
+concreate method
+_____________
+
+returntype methodname (argumnet)
+{
+  ....
+  .....
+  return ;
+	
+}
+
+
+abstract mtehod 
+_______________
+
+abstarct returntype methodname (argumnet);
+
+
+
+
+abstract class A
+{
+
+} 
+
+class Test
+{
+	public static void main(String arg[])
+	{
+		 A ob;
+	}
+}
+
+o/p:
+no error
+no output
+
+
+
+
+
+abstract class A
+{
+
+} 
+
+class Test
+{
+	public static void main(String arg[])
+	{
+		new A();
+	}
+}
+
+o/p:
+error
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac 2.java
+2.java:10: error: A is abstract; cannot be instantiated
+                new A();
+                ^
+
+
+ class A
+{
+
+} 
+
+class Test
+{
+	public static void main(String arg[])
+	{
+		new A();
+	}
+}
+
+
+o/p:
+no error 
+no output
+
+
+
+
+ class A
+{
+    void show()
+    {
+    	System.out.println("show concrate method");
+    }
+} 
+
+class Test
+{
+	public static void main(String arg[])
+	{
+		new A().show();
+	}
+}
+
+o/P:
+show concrate method
+
+
+ class A
+{
+   abstract void show()
+    {
+    	System.out.println("show concrate method");
+    }
+} 
+
+class Test
+{
+	public static void main(String arg[])
+	{
+		new A().show();
+	}
+}
+
+
+o/P:
+error
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac 2.java
+2.java:1: error: A is not abstract and does not override abstract method show() in A
+ class A
+ ^
+2.java:3: error: abstract methods cannot have a body
+   abstract void show()
+                 ^
+2 errors
+
+
+ abstract class A
+{
+   abstract void show();
+} 
+
+
+
+
+o/p:
+no error
+
+
+
+ abstract class A
+{
+   abstract void show();
+} 
+
+class Test
+{
+	public static void main(String arg[])
+	{
+		A ob;
+		
+	}
+}
+
+o/P;
+no error
+
+
+ abstract class A
+{
+   abstract void show();
+} 
+
+class Test
+{
+	public static void main(String arg[])
+	{
+		A ob;
+		ob=new A(); // error object craete not allow
+
+	}
+}
+
+
+o/p:
+error
+
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac 2.java
+2.java:11: error: A is abstract; cannot be instantiated
+                ob=new A();
+                   ^
+1 error
+
+
+
+ abstract class A
+{
+   abstract void show();
+} 
+class B extends A
+{
+
+}
+
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac 2.java
+2.java:5: error: B is not abstract and does not override abstract method show() in A
+class B extends A
+^
+1 error
+
+
+
+ abstract class A
+{
+   abstract void show();
+} 
+abstract class B extends A
+{
+
+}
+
+
+
+o/p:
+no error 
+
+here A and B class object creation not allow.
+
+
+
+ abstract class A
+{
+   abstract void show();
+} 
+abstract class B extends A
+{
+
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+		new A(); // error
+		new B(); // error
+		A ob; //correct
+		B obj;//correct
+	}
+}
+
+o/p:
+C:\Users\LENOVO\OneDrive\Desktop\JAVAPROGRAMOOPS>javac 2.java
+2.java:14: error: A is abstract; cannot be instantiated
+                new A();
+                ^
+2.java:15: error: B is abstract; cannot be instantiated
+                new B();
+                ^
+2 errors
+
+
+
+
+ abstract class A
+{
+   abstract void show();
+} 
+ class B extends A
+{
+      void show()
+      {
+      	System.out.println("show mwthod ");
+      }
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+		A ob=new B(); //upcasting
+		ob.show();
+	}
+}
+
+
+o/p:
+show mwthod
+
+
+
+inside abstract class we can write constructor   static and non static method static and non static variable  static and non static block  if one of method is abstrct  class is  abstract class .
+
+
+abstract class A
+{
+   int x=10;
+   static int y=20;
+   A()
+   {
+   	  System.out.println("A constrcutor ");
+   }
+   void show()
+   {
+   	 System.out.println("show maethod ");
+   }
+   abstract void look();
+} 
+ class B extends A
+{
+    B() 
+    {
+       System.out.println("B constrcutor ");	
+    }
+    void look()
+    {
+    	System.out.println("look method ");
+    }
+    
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+		A ob=new B();
+		ob.show();
+		ob.look();
+
+	}
+}
+
+
+
+o/p:
+A constrcutor
+B constrcutor
+show method
+l
+
+
+
+// Abstract class
+abstract class Shape {
+    // Abstract method
+    abstract double area();
+
+    // Concrete method
+    void display() {
+        System.out.println("This is a shape.");
+    }
+}
+
+// Circle class
+class Circle extends Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Rectangle class
+class Rectangle extends Shape {
+    double length, width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    double area() {
+        return length * width;
+    }
+}
+
+// Triangle class
+class Triangle extends Shape {
+    double base, height;
+
+    Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    @Override
+    double area() {
+        return 0.5 * base * height;
+    }
+}
+
+// Main class
+public class ShapeTest {
+    public static void main(String[] args) {
+        Shape circle = new Circle(5.0);
+        Shape rectangle = new Rectangle(4.0, 6.0);
+        Shape triangle = new Triangle(3.0, 4.0);
+
+        circle.display();
+        System.out.println("Circle area: " + circle.area());
+
+        rectangle.display();
+        System.out.println("Rectangle area: " + rectangle.area());
+
+        triangle.display();
+        System.out.println("Triangle area: " + triangle.area());
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Abstract class
+abstract class Shape {
+    // Abstract method
+    abstract double area();
+
+    // Concrete method
+    void display() {
+        System.out.println("This is a shape.");
+    }
+}
+// Circle class
+class Circle extends Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+// Rectangle class
+class Rectangle extends Shape {
+    double length, width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    double area() {
+        return length * width;
+    }
+}
+// Triangle class
+class Triangle extends Shape {
+    double base, height;
+
+    Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    @Override
+    double area() {
+        return 0.5 * base * height;
+    }
+}
+// Main class
+class ShapeTest {
+    public static void main(String[] args) {
+        Shape s= new Circle(5.0);
+        System.out.println("Circle area: " + s.area());
+      
+        s= new Rectangle(4.0, 6.0);
+     
+        System.out.println("Rectangle area: " + s.area());
+          s =new Triangle(3.0, 4.0);
+        System.out.println("Triangle area: " + s.area());
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Abstract class
+abstract class Shape {
+    // Abstract method
+    String name;
+    Shape(String S)
+    {
+    	this.name=S;
+    }
+    abstract double area();
+}
+// Circle class
+class Circle extends Shape {
+    double radius;
+
+    Circle(String S,double radius) {
+    	super(S);
+        this.radius = radius;
+    }
+
+    @Override
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+// Rectangle class
+class Rectangle extends Shape {
+    double length, width;
+
+    Rectangle(String S,double length, double width) {
+    	super(S);
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    double area() {
+        return length * width;
+    }
+}
+// Triangle class
+class Triangle extends Shape {
+    double base, height;
+
+    Triangle(String S,double base, double height) {
+    	super(S);
+        this.base = base;
+        this.height = height;
+    }
+
+    @Override
+    double area() {
+        return 0.5 * base * height;
+    }
+}
+// Main class
+class ShapeTest {
+
+	static void show(Shape s)
+	{
+         System.out.println(s.name+"  area ="+s.area());
+	}
+    public static void main(String[] args) {
+    
+        Circle c=new Circle("circle",5.0);
+      
+       Rectangle r=new Rectangle("rectangle",7,8);
+    Triangle t=new Triangle("triangle",3.0, 4.0);
+     show(c);
+     show(r);
+     show(t);
+      
+    }
+}
+
+
+
+
+
+
+
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+// Abstract class
+abstract class Shape {
+    String name;
+
+    Shape(String name) {
+        this.name = name;
+    }
+
+    abstract double area();
+
+    @Override
+    public String toString() {
+        return "Shape: " + name;
+    }
+}
+
+// Circle class
+class Circle extends Shape {
+    double radius;
+
+    Circle(String name, double radius) {
+        super(name);
+        this.radius = radius;
+    }
+
+    @Override
+    double area() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public String toString() {
+        return name + " with radius " + radius;
+    }
+}
+
+// Rectangle class
+class Rectangle extends Shape {
+    double length, width;
+
+    Rectangle(String name, double length, double width) {
+        super(name);
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    double area() {
+        return length * width;
+    }
+
+    @Override
+    public String toString() {
+        return name + " with length " + length + " and width " + width;
+    }
+}
+
+// Triangle class
+class Triangle extends Shape {
+    double base, height;
+
+    Triangle(String name, double base, double height) {
+        super(name);
+        this.base = base;
+        this.height = height;
+    }
+
+    @Override
+    double area() {
+        return 0.5 * base * height;
+    }
+
+    @Override
+    public String toString() {
+        return name + " with base " + base + " and height " + height;
+    }
+}
+
+// Main class
+ class ShapeTest {
+
+    static void show(Shape s, DecimalFormat df) {
+        System.out.println(s.toString() + " has area = " + df.format(s.area()));
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("0.00");
+
+        System.out.print("Enter radius of circle: ");
+        double radius = sc.nextDouble();
+        Shape circle = new Circle("Circle", radius);
+
+        System.out.print("Enter length and width of rectangle: ");
+        double length = sc.nextDouble();
+        double width = sc.nextDouble();
+        Shape rectangle = new Rectangle("Rectangle", length, width);
+
+        System.out.print("Enter base and height of triangle: ");
+        double base = sc.nextDouble();
+        double height = sc.nextDouble();
+        Shape triangle = new Triangle("Triangle", base, height);
+
+        System.out.println("\n-- Shape Area Results --");
+        show(circle, df);
+        show(rectangle, df);
+        show(triangle, df);
+
+        sc.close();
+    }
+}
+
+
+
+static void show(Shape s) {
+    System.out.println(s.name + "  area = " + s.area());
+}
+
+What’s Happening Here?
+The method show(Shape s) accepts a reference of the abstract superclass Shape.
+
+At runtime, the actual object passed could be of any subclass: Circle, Rectangle, or Triangle.
+
+When s.area() is called, Java dynamically determines which area() method to invoke based on the object type, not the reference type.
+
+This is the core of runtime polymorphism.
+
+
+https://chatgpt.com/share/68885fe5-c418-8008-8d7b-a97349b8c3a3
+
+
+
+interface 
+_________________
+
+interface interfacename
+{
+	
+
+}
+in java8 before interface contain only public abstract method and public final static data member .
+
+not allow  constructor  static and non static block  ,.....
+
+we can  not create  object only refrence.
+
+reat — let's focus on interface in Java 7, which means:
+
+✅ No default or static methods (those were introduced in Java 8)
+✅ All methods are implicitly public and abstract
+✅ All fields are public static final (constants)
+✅ Interfaces are used only to define contracts, not to provide implementation
+
+
+
+In Java, an interface is a reference type, similar to a class, that can contain only constants, method signatures, default methods, static methods, and nested types. The methods in interfaces are abstract by default (until Java 8+, which added default and static methods).
+
+
+Java allows a class to implement  interfaces
+
+
+interface A
+{
+	void show(); //publlic abstract void show();
+
+}
+class B implements A
+{
+    public  void show()
+    {
+    	System.out.println("show method ");
+    }
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+		//A ob=new A();  error
+		A ob=new B();
+		ob.show();
+	}
+}

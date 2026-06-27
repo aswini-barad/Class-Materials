@@ -1,0 +1,531 @@
+what  is  final.
+
+final is a modifier.
+
+final varibale:
+______________
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int a=10;
+	   a=20;
+	   final int b=30;  //local variable
+	  // b=40;  error
+	  System.out.println(a+"  "+b);
+	}
+}
+
+o/p:
+20   30
+
+final  static variable
+_______________________
+
+
+class Test
+{
+	static int a;
+	public static void main(String arg[])
+	{
+	  a=10;
+	  System.out.println(a);
+	}
+}
+
+o/p:
+10
+
+
+class Test
+{
+ static int a;
+	public static void main(String arg[])
+	{
+	  a=10;
+	  System.out.println(a);
+	}
+}
+
+o/p:
+C:\Users\HP\Desktop>javac 1.java
+1.java:6: error: cannot assign a value to final variable a
+          a=10;
+          ^
+1 error
+
+
+class Test
+{
+ 	final static int a=10;
+	public static void main(String arg[])
+	{
+	  //a=20; error
+	  System.out.println(a);
+	}
+}
+o/p:
+10
+
+
+class Test
+{
+ 	  int a;
+ 	
+	public static void main(String arg[])
+	{
+	
+	  Test t=new Test();
+	  t.a=10;
+	  System.out.println(t.a);
+
+	}
+}
+
+final instance variable  //blank final variable 
+________________________
+class Test
+{
+ 	 final int a;
+ 	 {
+ 	 	a=10;
+ 	 	//a=20; error
+ 	 }
+ 	
+	public static void main(String arg[])
+	{
+	
+	  Test t=new Test();
+	  //t.a=10; error
+	  System.out.println(t.a);
+
+	}
+}
+
+o/p:
+10
+class Test
+{
+ 	 final int a;
+ 	 Test()
+ 	 {
+ 	 	a=10;
+ 	 }
+ 	
+	public static void main(String arg[])
+	{
+	
+	  Test t=new Test();
+	  //t.a=10; error
+	  System.out.println(t.a);
+
+	}
+}
+o/p:
+10
+blank final variable
+________________________
+
+A blank final variable in Java is a final variable that is not initialized during declaration. Below is a simple example of blank final. // A simple blank final example final int i; i = 30; 
+
+
+Blank variables
+A final variable which is left without initialization is known as blank final variable. Like instance variables, final variables will not be initialized with default values. Therefore, it is mandatory to initialize final variables once you declare them.
+
+Still, if you try to use blank variables in your code, a compile time error will be generated.
+
+Example
+In the following Java program, the class Student contains two final variables name and age and they have not been initialized.
+
+public class Student {
+   public final String name;
+   public final int age;
+   public void display(){
+      System.out.println("Name of the Student: "+this.name);
+      System.out.println("Age of the Student: "+this.age);
+   }
+   public static void main(String args[]) {
+      new Student().display();
+   }
+}
+Compile time error
+On compiling, this program generates the following error.
+
+Student.java:3: error: variable name not initialized in the default constructor
+   private final String name;
+                        ^
+Student.java:4: error: variable age not initialized in the default constructor
+   private final int age;
+                     ^
+2 errors
+
+
+To resolve this, you need to initialize the declared final variables as −
+
+public class Student {
+   public final String name;
+   public final int age;
+   public Student(){
+      this.name = "Raju";
+      this.age = 20;
+   }
+   public void display(){
+      System.out.println("Name of the Student: "+this.name );
+      System.out.println("Age of the Student: "+this.age );
+   }
+   public static void main(String args[]) {
+      new Student().display();
+   }
+}
+
+Name of the Student: Raju
+Age of the Student: 20
+
+Static blank final variable
+In the same way if you declare a static variable final without initializing it, it is considered as static final variable.
+
+When a variable is declared both static and final you can initialize it only in a static block, if you try to initialize it elsewhere, the compiler assumes that you are trying to reassign value to it and generates a compile time error −
+
+Example
+class Data{
+   static final int num;
+   Data(int i){
+      num = i;
+   }
+}
+public class ConstantsExample {
+   public static void main(String args[]) {
+      System.out.println("value of the constant: "+Data.num);
+   }
+}
+Compile time error
+ConstantsExample.java:4: error: cannot assign a value to final variable num
+   num = i;
+   ^
+1 error
+Example
+Therefore, it’s a must to initialize a static final variable in a static block.
+
+To make the above program work you need to initialize the final static variable in a static block as −
+
+class Data{
+   static final int num;
+   static{
+      num = 1000;
+   }
+}
+public class ConstantsExample {
+   public static void main(String args[]) {
+      System.out.println("value of the constant: "+Data.num);
+   }
+}
+
+
+value of the constant: 1000
+
+
+
+final  class
+______________
+
+A class is final.
+ we can not inheritance.
+
+ some predefined final class name
+ ___________________________________
+
+ String
+ StringBuffer
+ StringBulider
+ Integer
+ Float
+ Wrapper class are final class
+
+
+ class A
+{
+
+}
+
+class Test extends A
+{
+ 	 
+	public static void main(String arg[])
+	{
+	
+	  
+
+	}
+}
+
+o/p:
+no error
+
+final class A
+{
+  void disp()
+  {
+  	System.out.println("disp");
+  }
+}
+
+class Test extends A
+{
+ 	 
+	public static void main(String arg[])
+	{
+	
+	  
+
+	}
+}
+
+1.java:9: error: cannot inherit from final A
+class Test extends A
+                   ^
+
+
+
+
+class Test extends String
+{
+ 	 
+	public static void main(String arg[])
+	{
+	
+	  
+
+	}
+}
+
+o/p:
+error
+
+
+import java.awt.Frame
+class Test extends Frame
+{
+ 	 
+	public static void main(String arg[])
+	{
+	
+	  
+
+	}
+}
+
+o/p:
+no error 
+
+beacuse Frame is not final class
+
+
+
+
+final  method
+_________________
+final method not overridding.
+
+class A
+{
+	final void show()
+	{
+		System.out.println("A show ");
+	}
+}
+class B extends A 
+{
+	void show()
+	{
+		System.out.println("B show ");
+		super.show();
+	}
+}
+
+C:\Users\HP\Desktop>javac 1.java
+1.java:10: error: show() in B cannot override show() in A
+        void show()
+             ^
+  overridden method is final
+1 error
+
+
+
+
+casting 
+________________
+class P
+{
+	void f1()
+	{
+        sop("P f1");
+	}
+	void f3()
+	{
+			sop("P f3");
+	}
+}
+class C extends P
+{
+	void f2()
+	{
+	     sop("C f2");
+	}
+	       //overriding method
+			void f1()
+			{
+		        sop("C f1");
+			}
+	
+}
+
+parent refence hold parent object.it can acess only parent data method .
+not acess child data and method.
+P  ob=new P();
+ob.f1();  //p f1
+ob.f2(); // error
+
+child refence hold child object.it can acess both parent data ,method and child data ,method.
+C ob=new C();
+ob.f1();  //C f1
+ob.f2(); // C f2
+ob.f3(); //P f3
+
+
+parent refence hold child object (upcasting//     //).it can acess only parent data and method that are inheritance child class and it acess overidding  method. not acess child other method and data.
+P  ob=new C();  //upcasting //widening 
+ob.f1();  //C f1
+ob.f2(); // error
+ob.f3(); //P f3
+
+When the reference variable of superclass refers to the object of subclass, it is known as upcasting in Java. In other words, when the subclass object type is converted into the superclass type, this type of conversion is called upcasting. It is also called widening in Java.
+
+
+
+child refernce never hold parent object .
+
+C ob=new P(); // erorr
+
+downcasting
+_____________
+
+without upcasting there is no downcasting
+
+
+P  ob=new C();  //upcasting //widening 
+
+C obj=(C)ob; //downcasting//narrwing 
+obj.f1();  //C f1
+obj.f2(); // C f2
+ob.f3(); //P f3
+
+
+class A
+{
+	int x;
+	A(int x)
+	{
+      this.x=x;
+	}
+	void show()
+	{
+		System.out.println(x);
+	}
+}
+class B extends A 
+{
+	int y;
+	B(int x,int y)
+	{
+
+		super(x);
+		System.out.println(y);
+      this.y=y;
+	}
+	void disp()
+	{
+		System.out.println("in disp"+x);
+		System.out.println("i disp" +y);
+	}
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+		A ob=new B(10,20);//upcasting
+		ob.show();
+		//ob.disp(); error
+	//B obj=(B)ob;
+	//obj.disp();
+	//obj.show();
+	}
+}
+
+o/p:
+20
+10
+
+instanceof 
+______________
+
+it is a operator .
+
+class A
+{
+
+}
+class B extends A 
+{
+	
+}
+class C extends B
+{
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+		A ob=new B();
+		System.out.println(ob instanceof B);
+
+		System.out.println(ob instanceof A);
+		System.out.println(ob instanceof Object);
+		System.out.println(ob instanceof C);
+}
+}
+o/p:
+true
+true
+true
+false
+
+
+class A
+{
+
+}
+class B 
+{
+	
+}
+class C 
+{
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+		Object ob=new B();
+		Object obj=new A();
+		A obj1=new A();
+		System.out.println(obj1 instanceof A);
+		//System.out.println(obj1 instanceof B); error
+		
+}
+}
+o/p:
+true

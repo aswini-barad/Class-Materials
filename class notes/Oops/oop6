@@ -1,0 +1,321 @@
+why static method   // class method
+_________________________
+This method releated to class . common method for all object.  share method .
+before object that method create.
+non static and other static method call another static method directly.
+
+(1)static data or (class data )  manipulation static method
+(2)private static data static method needed
+(3)private constructor    
+(4)utility class   
+
+(1)
+class A
+{
+    static int data;
+    static void show()
+    {
+        data=10;
+        System.out.println(data); //10
+    }
+}
+class Test
+{
+    public static void main(String arg[])
+    {
+          System.out.println(A.data);//0
+           A.show();
+           System.out.println(A.data);//10
+
+    }
+}
+
+
+(2)private static data not acess outside class acess only static method
+class A
+{
+   private static int data;
+    static void show()
+    {
+        data=10;
+        System.out.println(data); //10
+    }
+}
+class Test
+{
+    public static void main(String arg[])
+    {
+         
+           A.show();
+         //System.out.println(A.data);//10 error
+
+    }
+
+}
+
+(3)
+private constructor we can not create object outside class.
+
+class A
+{
+   private A()
+   {
+
+   }
+}
+class Test
+{
+    public static void main(String arg[])
+    {
+         
+        //A ob=new A(); // error
+
+    }
+
+}
+
+solution static method that class .
+
+class A
+{
+   private A()
+   {
+        System.out.println("private constructor ");
+   }
+   static void create()
+   {
+       A ob=new A();
+   }
+}
+class Test
+{
+    public static void main(String arg[])
+    {
+         //A ob=new A(); error
+        A.create();
+
+    }
+
+}
+
+o/p:
+private constructor
+
+singleton class
+___________________
+class create only one object .
+
+rule:
+private constructor
+static method
+static object refernce
+
+
+class A {
+    static A ob;             // Static variable to hold the single instance of class A
+
+    private A() {
+        // Private constructor to prevent instantiation from outside the class
+    }
+
+    static A create() {
+        if (ob == null) {
+            ob = new A();    // Object is created only once
+        }
+        return ob;           // Same object is returned every time
+    }
+
+    void show() {
+        System.out.println("show method ");
+    }
+}
+
+class Test
+{
+    public static void main(String arg[])
+    {
+       A obj=A.create();
+       A obj1=A.create();
+       System.out.println(obj == obj1);
+      obj.show();
+    }
+}
+
+
+(4) utilty class 
+
+class contain only static variable and static method that class is known as utilty class.
+That class object not reuried.
+
+prdefined utilty class
+_________________________
+Math
+Arrays
+
+class Mymath
+{
+   static int c=0;
+    static void add(int a,int b)
+    {
+       System.out.println("sum="+(a+b));
+    }
+    static int mult(int a,int b)
+    {
+        return a*b;
+    }
+}
+
+class Test
+{
+    public static void main(String arg[])
+    {
+        Mymath.add(10,20);
+        System.out.println(Mymath.mult(5,4));
+         System.out.println(Mymath.c);
+         Systemout.println(Math.pow(2,3));
+    }
+}
+
+
+
+why nonstatic method   // instance  method //object method
+____________________________________________________________________
+A non-static method (also called instance method) belongs to the object of the class, not to the class itself.
+
+
+Key Points
+Feature               Non-Static Method
+Belongs to  Object (Instance)
+Access to Instance Variables    ✅ Yes
+Access to Static Variables  ✅ Yes
+Requires Object Creation    ✅ Yes
+Used When   Behavior varies per object
+
+Reasons to Use Non-Static (Instance) Methods
+To access or modify instance (non-static) variables
+
+To perform object-specific behavior
+
+To follow real-world object behavior modeling
+
+To override in inheritance (polymorphism)
+
+(1) Accessing Instance Variables
+class Student {
+    String name;  // instance variable
+
+    void setName(String n)          //instance method
+     {
+        name = n;
+    }
+
+    void show()                            //instance method
+    {
+        System.out.println("Name: " + name);
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.setName("Amit");
+        s1.show();  // Output: Name: Amit
+    }
+}
+
+Here, each object has its own name. So we need non-static methods to work with object-specific data.
+
+
+
+(2) Object-Specific Behavior
+
+
+class Circle {
+    double radius;
+
+    Circle(double r) {
+        radius = r;
+    }
+
+    double area() {
+        return 3.14 * radius * radius;
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        Circle c1 = new Circle(3);
+        Circle c2 = new Circle(5);
+
+        System.out.println(c1.area());  // Output: 28.26
+        System.out.println(c2.area());  // Output: 78.5
+    }
+}
+Each Circle object has a different radius, so the area() method must be non-static
+
+(3) we can acess private instance outside class requried instance method
+class A
+{
+    private int x;
+    A()
+    {
+      x=10;
+    }
+    int getX()
+    {
+        return x;
+    }
+
+}
+class Test
+{
+      publc static void main(String arg[])
+      {
+         A ob=new A();
+         System.out.println(ob.getX());
+      }
+}
+
+Static vs Non-Static Methods – Quick Comparison
+Feature             Static Method        Non-Static Method
+Belongs to              Class                           Object
+Objectrequired       ❌ No                      ✅ Yes
+Accesinstance var      ❌ No                    ✅ Yes
+Access static var        ✅ Yes                ✅ Yes
+Common use case Utility, Singleton         Object-specific behavior
+
+
+both static and non static method and variable  example
+_____________________________________
+
+class Employee {
+    static String company = "ABC Ltd";  // shared by all
+    String name;
+
+    Employee(String name) {
+        this.name = name;
+    }
+
+    void show() {
+        System.out.println(name + " works at " + company);
+    }
+
+    static void changeCompany(String c) {
+        company = c;
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        Employee e1 = new Employee("Ravi");
+        Employee e2 = new Employee("Kiran");
+
+        e1.show();  // Ravi works at ABC Ltd
+        e2.show();  // Kiran works at ABC Ltd
+
+        Employee.changeCompany("XYZ Ltd");
+
+        e1.show();  // Ravi works at XYZ Ltd
+        e2.show();  // Kiran works at XYZ Ltd
+    }
+}

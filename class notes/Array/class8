@@ -1,0 +1,384 @@
+//sum of element
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,9,12,7};
+	   int s=0;
+	   int index;
+	   for(index=0;index<arr.length;index++)
+	   {
+	  		 s=s+arr[index];
+	   }
+	   System.out.println("sum of element="+s);
+	}
+}
+
+o/p:
+sum of element=41
+
+Q2 display first and last element any array 
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,9,12,7};
+	  
+	   System.out.println("first element="+arr[0]);
+	   System.out.println("last element="+arr[arr.length-1]);
+	}
+}
+C:\Users\HP\Desktop\STACKPROGRAM>java Test
+first element=5
+last element=7
+
+Q3 dispaly all element in array  forward
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,9,12,7};
+	   int index;
+	   for(index=0;index<arr.length;index++)
+	   {
+	     System.out.println(arr[index]);
+	   }
+	}
+}
+o/p:
+
+5
+8
+9
+12
+7
+Q4 display element in backward
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,9,12,7};
+	   int index;
+	   System.out.println("elements are revorder");
+	   for(index=arr.length-1;index>=0;index--)
+	   {
+	     System.out.println(arr[index]);
+	   }
+	}
+}
+
+Q5 display first even element
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,9,12,7};
+	   int index;
+	   for(index=0;index<arr.length;index++)
+	   {
+                 if(arr[index]%2==0)
+                 {
+                 	System.out.println("first even element="+arr[index]);
+                 	break;
+                 }
+	     
+	   }
+	}
+}
+
+o/p:
+first even element=8
+
+Q6 count no of even element 
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,9,12,7};
+	   int index;
+	   int ec=0;
+	   for(index=0;index<arr.length;index++)
+	   {
+                 if(arr[index]%2==0)
+                 {	
+                 	ec++;
+                 }
+	   }
+	   System.out.println("total no of even element="+ec);
+	}
+}
+o/p:
+total no of even element=2
+
+
+Q7 wap count no of odd and even elements in array
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,9,12,7};
+	   int index;
+	   int ec=0,oc=0;
+	   for(index=0;index<arr.length;index++)
+	   {
+                 if(arr[index]%2==0)
+                 {	
+                 	ec++;
+                 }
+                 else
+                 {
+                 	oc++;
+                 }
+	   }
+	   System.out.println("total no of even element="+ec);
+	   System.out.println("total no of odd element="+oc);
+	}
+}
+o/p:
+
+total no of even element=2
+total no of odd element=3
+
+Q7 wap sum of odd and even element in array 
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,9,12,7};
+	   int index;
+	   int es=0,os=0;
+	   for(index=0;index<arr.length;index++)
+	   {
+                 if(arr[index]%2==0)
+                 {	
+                 	es=es+arr[index];
+                 }
+                 else
+                 {
+                 	os=os+arr[index];
+                 }
+	   }
+	   System.out.println("sum  of even element="+es);
+	   System.out.println("sum of odd element="+os);
+	}
+}
+
+o/p:
+sum  of even element=20
+sum of odd element=21
+
+Qfind big element in array
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,9,12,7};
+	   int index;
+	   int big=arr[0];
+	   for(index=1;index<arr.length;index++)
+	   {
+               if(big<arr[index])
+               {
+                 big=arr[index];
+               } 
+	   }
+	   System.out.println("big element="+big);
+	   
+	}
+}
+
+
+Qfind the smallest element in array
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,9,12,7};
+	   int index;
+	   int small=arr[0];
+	   for(index=1;index<arr.length;index++)
+	   {
+               if(small>arr[index])
+               {
+                 small=arr[index];
+               } 
+	   }
+	   System.out.println("small element="+small);
+	   
+	}
+}
+
+
+Q display bigest and smallest element in array 
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,9,12,7};
+	   int index;
+	   int small=arr[0];
+	   int big=arr[0];
+	   for(index=1;index<arr.length;index++)
+	   {
+               if(small>arr[index])
+               {
+                 small=arr[index];
+               } 
+               if(big<arr[index])
+               {
+               	 big=arr[index];
+               }
+	   }
+	   System.out.println("small element="+small);
+	   System.out.println("big element="+big);
+	}
+}
+
+o/p:
+small element=5
+big element=12
+
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,6,12,9,7};
+	   int index;
+	   int big=Integer.MIN_VALUE,sbig=Integer.MIN_VALUE;
+	   for(index=1;index<arr.length;index++)
+	   {
+            if(big<arr[index])
+            {
+            	sbig=big;
+            	big=arr[index];
+            }  
+             if(big>arr[index]&&arr[index]>sbig)
+             {
+             	sbig=arr[index];
+             }   
+	   }
+
+	   System.out.println("second big element="+sbig);
+	}
+}
+
+
+
+
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,6,12,9,7};
+	   int index;
+	   int small=Integer.MAX_VALUE,ssmall=Integer.MAX_VALUE;
+	   for(index=0;index<arr.length;index++)
+	   {
+            if(small>arr[index])
+            {
+            	ssmall=small;
+            	small=arr[index];
+            }  
+             if(small<arr[index]&&arr[index]<ssmall)
+             {
+             	ssmall=arr[index];
+             }   
+	   }
+
+	   System.out.println("second small element="+ssmall);
+	}
+}
+
+
+o/p
+second smallest element 
+6
+
+
+serach an element
+______________________
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,6,12,9,6,8};
+	   Scanner sc=new Scanner(System.in);
+	   System.out.println("enter serach element ");
+	   int ser=sc.nextInt();
+	   int index;
+        for(index=0;index<arr.length;index++)
+        {
+        	if(arr[index]==ser)
+        	{
+        		break;
+        	}
+        }
+        if(arr.length==index)
+        {
+        	System.out.println(ser +" element not found ");
+        }
+        else
+        {
+        	System.out.println(ser+" element found "+(index+1)+" postion");
+        }
+	  
+	}
+}
+
+C:\Users\HP\Desktop\STACKPROGRAM>java Test
+enter serach element
+6
+6 element found 3 postion
+
+C:\Users\HP\Desktop\STACKPROGRAM>java Test
+enter serach element
+8
+8 element found 2 postion
+
+C:\Users\HP\Desktop\STACKPROGRAM>java Test
+enter serach element
+23
+23 element not found
+
+C:\Users\HP\Desktop\STACKPROGRAM>
+
+
+one element occur how many times
+___________________________________
+
+
+import java.util.*;
+class Test
+{
+	public static void main(String arg[])
+	{
+	   int arr[]={5,8,6,12,9,6,8};
+	   Scanner sc=new Scanner(System.in);
+	   System.out.println("enter serach element ");
+	   int ser=sc.nextInt();
+	   int index,c=0;
+        for(index=0;index<arr.length;index++)
+        {
+        	if(arr[index]==ser)
+        	{
+        		c++;
+        	}
+        }
+        if(c==0)
+        {
+        	System.out.println(ser +" element not found ");
+        }
+        else
+        {
+        	System.out.println(ser+" element found "+c+" times");
+        }
+	  
+	}
+}

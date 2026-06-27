@@ -1,0 +1,1455 @@
+polymorphism
+________
+
+poly  			many
+
+morphism       forms
+
+2+3    5
+"2"+"3"  23
+
+println(10);
+println(2.5);
+
+
+
+
+compile time // early binding //static binding //  overloading
+______________________
+method having same name differnt signature.
+
+signature consist of  methodname  with  argument,type and order.
+
+returntype is not part of overloading.
+
+only one class requried.
+
+same name same signature not allow
+
+class Arith
+{
+	void add()
+	{
+	  int a=2,b=3,s;
+	  s=a+b;
+	  System.out.println("sum="+s);
+	}
+	void add(int x,int y)// 2 argument
+	{
+	  System.out.println("sum="+(x+y));
+	}
+	int add(int p,int q,int r) // 3 argment
+	{
+	  return p+q+r;
+	}
+	void add(double x,double y) //type
+	{
+	  System.out.println("sum="+(x+y));
+	}
+	void add(double x,int y) //order
+	{
+	  System.out.println("sum="+(x+y));
+	}
+	void add(int x,double y)//order
+	{
+	  System.out.println("sum="+(x+y));
+	}
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+	   Arith ar=new Arith();
+	   ar.add(10,20);
+	   ar.add(2.5,3);
+	}
+}
+
+
+Test.java
+
+javac Test.java  (compile time)
+
+java Test
+
+sum=30
+sum=5.5
+
+
+if we write any modifier  (static public private protected final synchronized  
+there is no effect in overloading.
+
+class Arith
+{
+	static void add()
+	{
+	  int a=2,b=3,s;
+	  s=a+b;
+	  System.out.println("sum="+s);
+	}
+	final void add(int x,int y)
+	{
+	  System.out.println("sum="+(x+y));
+	}
+	synchronized int add(int p,int q,int r)
+	{
+	  return p+q+r;
+	}
+	private void add(double x,double y)
+	{
+	  System.out.println("sum="+(x+y));
+	}
+	public void add(double x,int y)
+	{
+	  System.out.println("sum="+(x+y));
+	}
+	void add(int x,double y)
+	{
+	  System.out.println("sum="+(x+y));
+	}
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+	   Arith ar=new Arith();
+	   ar.add(10,20);
+	   ar.add(2.5,3);
+	  
+	}
+}
+sum=30
+sum=5.5
+
+
+class Arith
+{
+	
+	public void add(double x,int y)
+	{
+	  System.out.println("sum="+(x+y));
+	}
+	void add(int x,double y)
+	{
+	  System.out.println("sum="+(x+y));
+	}
+
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+	   Arith ar=new Arith();
+	  // ar.add(10,20); erorr  to add is ambiguou
+	   ar.add(10,2.5);
+	}
+}
+o/p:
+
+
+var arg method 
+________
+class Arith
+{
+	
+  
+	void show(int ...x)
+	{
+	  System.out.println("var arg method ");
+	}
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+	   Arith ar=new Arith();
+	  ar.show(10);
+	  ar.show(10,20);
+	  ar.show(1,2,3,4);
+	}
+}
+
+o/p:
+var arg method
+var arg method
+var arg method
+
+
+
+class Arith
+{
+	
+	void show(int ...x)
+	{
+	  System.out.println("var arg method ");
+	}
+	void show(int a)
+	{
+		System.out.println("normal "+a);
+	}
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+	   Arith ar=new Arith();
+	  ar.show(10);
+	  ar.show(10,20);
+	  ar.show(1,2,3,4);
+	  int arr[]={1,2,4,5};
+	  ar.show(arr);
+	}
+}
+
+
+o/p:
+normal 10
+var arg method
+var arg method
+var arg method
+
+class Arith
+{
+	
+  
+	void show(Object ...x)
+	{
+	  System.out.println("var arg method ");
+	}
+	void show(int a)
+	{
+		System.out.println("normal "+a);
+	}
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+	   Arith ar=new Arith();
+	  ar.show(10);
+	  ar.show(10,20);
+	  ar.show(1,2.5,3,"hi");
+	  int arr[]={1,2,4,5};
+	  ar.show(arr);
+	}
+}
+
+o/p:
+
+normal 10
+var arg method
+var arg method
+var arg method
+
+class Arith
+{
+	
+  
+	void show(int ...x,String ...y)  //int x[]
+	{
+	   int i;
+	   for(i=0;i<x.length;i++)
+	   {
+	   	 System.out.println(x[i]);
+	   }
+	   System.out.println();
+	}
+
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+	   Arith ar=new Arith();
+	  ar.show(10);
+	 ar.show(10,20);
+	  ar.show(1,2,3,4);
+	  int arr[]={1,2,4,5};
+	  ar.show(arr);
+	}
+}
+
+
+o/p:
+10
+
+10
+20
+
+1
+2
+3
+4
+
+1
+2
+4
+5
+
+
+
+class Arith
+{
+	
+  
+	void show(int y,int ...x)  //int x[]
+	{
+	   int i;
+	   for(i=0;i<x.length;i++)
+	   {
+	   	 System.out.println(x[i]);
+	   }
+	   System.out.println();
+	}
+
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+	   Arith ar=new Arith();
+	  ar.show(10);
+	 ar.show(10,20);
+	  ar.show(1,2,3,4);
+	  int arr[]={1,2,4,5};
+	  ar.show(5,arr);
+	}
+}
+
+
+o/p:
+
+
+
+
+
+class Arith
+{
+	
+  
+	void show(Object ...x)  //int x[]
+	{
+	   int i;
+	   for(i=0;i<x.length;i++)
+	   {
+	   	 System.out.println(x[i]);
+	   }
+	   System.out.println();
+	}
+
+   
+}
+class Test
+{
+	public static void main(String arg[])
+	{
+	   Arith ar=new Arith();
+	  ar.show(10,20,"hi","bye",true);
+	}
+}
+
+o/p:
+10
+20
+hi
+bye
+true
+
+
+
+class Test
+{
+	static void sop(Object x)
+	{
+		System.out.println(x);
+	}
+	public static void main(String arg[])
+	{
+	 sop(10);
+	 sop(12.34);
+	 sop(true);
+	 sop("enter a no ");
+	}
+}
+
+o/p:
+10
+12.34
+true
+enter a no
+
+
+
+run time // late binding //dynamic binding //  overridding
+_____________________
+
+class Parent
+{
+	void property()
+	{
+	    System.out.println("land+money+car");
+	}
+
+	void marry()
+	{
+		System.out.println("rita");
+	}
+}
+class Child extends Parent
+{
+		
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	    Child c=new Child();
+	    c.property();
+	    c.marry();
+	}
+}
+
+o/p:
+land+money+car
+rita
+
+overridding:
+child not statify parent method implementaion again redefined that method in child
+class same name same signatute that is known as overriding .
+
+class Parent
+{
+	void property()
+	{
+	    System.out.println("land+money+car");
+	}
+	//overridden
+	void marry()
+	{
+		System.out.println("rita");
+	}
+}
+class Child extends Parent
+{
+	//overridding
+	void marry()
+	{
+		System.out.println("gita");
+	}
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	    Child c=new Child();
+	    c.property();
+	    c.marry();
+	}
+}
+o/p:
+land+money+car
+gita
+
+
+
+
+
+runtime polymorphism //dynamic dispatch
+__________
+(1)inhertiance
+(2)overrding
+(3)upcasting 
+
+
+class Parent
+{
+	void property()
+	{
+	    System.out.println("land+money+car");
+	}
+	//overridden
+	void marry()
+	{
+		System.out.println("rita");
+	}
+}
+class Child extends Parent
+{
+	//overridding
+	void marry()
+	{
+		System.out.println("gita");
+	}
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	    Parent p=new Parent(); 
+	    p.marry(); // rita
+	       Parent p1=new Child(); //upcasting dynamic dispatch
+	    p1.marry(); // gita
+	}
+}
+
+o/p:
+rita
+gita
+
+
+rule 1:  staic ->non static   not alloow
+           non static  ->static   not allow
+           non static ->no static   overriding  (depend upon object)
+           static->static           method hidding(depend upon refernce)
+
+
+
+
+
+
+
+
+class Parent
+{
+	
+	//overridden
+	 void marry()
+	{
+		System.out.println("rita");
+	}
+}
+class Child extends Parent
+{
+	//overridding
+	static void marry()
+	{
+		System.out.println("gita");
+	}
+}
+
+o/p:
+C:\Users\DELL\Desktop>javac 1.java
+1.java:13: error: marry() in Child cannot override marry() in Parent
+        static void marry()
+                    ^
+  overriding method is static
+1 error
+class Parent
+{
+	
+	//overridden
+	static void marry()
+	{
+		System.out.println("rita");
+	}
+}
+class Child extends Parent
+{
+	//overridding
+	 void marry()
+	{
+		System.out.println("gita");
+	}
+}
+C:\Users\DELL\Desktop>javac 1.java
+1.java:13: error: marry() in Child cannot override marry() in Parent
+         void marry()
+              ^
+  overridden method is static
+1 error
+
+
+method hidding 
+______
+
+class Parent
+{
+	
+
+	static  void marry()
+	{
+		System.out.println("rita");
+	}
+}
+class Child extends Parent
+{
+	
+ static void marry()
+	{
+		System.out.println("gita");
+	}
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); //   depends upon refernce 
+	}
+}
+
+o/p:
+
+rita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+overridden   overridding
+rule 1:  staic ->    non static   not alloow
+           non static  ->static   not allow
+           non static ->no static   overriding  (depend upon object)
+           static->static           method hidding(depend upon refernce)
+
+
+class Parent
+{
+	
+	//overridden
+	 void marry()
+	{
+		System.out.println("rita");
+	}
+}
+class Child extends Parent
+{
+	//overridding
+	static void marry()
+	{
+		System.out.println("gita");
+	}
+}
+
+o/p:
+C:\Users\DELL\Desktop>javac 1.java
+1.java:13: error: marry() in Child cannot override marry() in Parent
+        static void marry()
+                    ^
+  overriding method is static
+1 error
+class Parent
+{
+	
+	//overridden
+	static void marry()
+	{
+		System.out.println("rita");
+	}
+}
+class Child extends Parent
+{
+	//overridding
+	 void marry()
+	{
+		System.out.println("gita");
+	}
+}
+C:\Users\DELL\Desktop>javac 1.java
+1.java:13: error: marry() in Child cannot override marry() in Parent
+         void marry()
+              ^
+  overridden method is static
+1 error
+
+
+method hidding 
+______
+
+class Parent
+{
+	
+
+	static  void marry()
+	{
+		System.out.println("rita");
+	}
+}
+class Child extends Parent
+{
+	
+ static void marry()
+	{
+		System.out.println("gita");
+	}
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); //   depends upon refernce 
+	}
+}
+
+o/p:
+
+rita 
+
+(2)
+access  modifier
+________
+
+public > protected >default(no keyword)->private 
+
+access modifier weaker not allow
+____________
+class Parent
+{
+	
+
+  public void marry()
+	{
+		System.out.println("rita");
+	}
+}
+class Child extends Parent
+{
+	
+  void marry()
+	{
+		System.out.println("gita");
+	}
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+o/p:
+error
+1.java:11: error: marry() in Child cannot override marry() in Parent
+  void marry()
+       ^
+  attempting to assign weaker access privileges; was public
+1 error
+
+
+class Parent
+{
+	
+
+  public void marry()
+	{
+		System.out.println("rita");
+	}
+}
+class Child extends Parent
+{
+	
+  public void marry()
+	{
+		System.out.println("gita");
+	}
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+
+o/p:
+gita
+
+class Parent
+{
+     void marry()
+	{
+		System.out.println("rita");
+	}
+}
+class Child extends Parent
+{
+	
+  protected  void marry()
+	{
+		System.out.println("gita");
+	}
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+o/p:
+gita
+
+
+	overridden   overridding
+rule 1:  protected    protected/public
+		 default        default/protected/public
+		 public          public
+		 private  (never overrding)
+
+(3)return type must same .
+class Parent
+{
+     int  marry()
+	{
+		System.out.println("rita");
+		return 0;
+	}
+}
+class Child extends Parent
+{
+	
+   int  marry()
+	{
+		System.out.println("gita");
+		return 0;
+	}
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+o/p:
+gita 
+
+class Parent
+{
+     int  marry()
+	{
+		System.out.println("rita");
+		return 0;
+	}
+}
+class Child extends Parent
+{
+	
+   double   marry()
+	{
+		System.out.println("gita");
+		return 0.0;
+	}
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+C:\Users\DELL\Desktop>javac 1.java
+1.java:12: error: marry() in Child cannot override marry() in Parent
+   double   marry()
+            ^
+  return type double is not compatible with int
+1 error
+
+
+//covarint returntype allow 
+_________
+
+covarint datatype means returntype  class type. 
+class A 
+{
+
+}
+class B extends A 
+{
+
+}
+
+class Parent
+{
+     A  marry()
+	{
+		System.out.println("rita");
+		return null;
+	}
+}
+class Child extends Parent
+{
+	
+  	B   marry()
+	{
+		System.out.println("gita");
+		return null;
+	}
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+o/p:
+gita
+
+         returntype
+overridden   overridding
+rule 1:  A    A
+		 A        B
+		 B        B
+		 B        A   (error)
+		 Object   A
+		 A         Object (error)
+		 Object    String
+		 String     Object(error)
+
+
+class Parent
+{
+     Object  marry()
+	{
+		System.out.println("rita");
+		return null;
+	}
+}
+class Child extends Parent
+{
+	
+  	String   marry()
+	{
+		System.out.println("gita");
+		return null;
+	}
+}
+
+class Test
+{
+	public static void main(String arg[])
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+
+o/p:
+gita
+
+
+
+//execption handling rule in overridding
+_____________
+
+
+class Parent
+{
+     void   marry() throws Exception
+	{
+		System.out.println("rita");
+		
+	}
+}
+class Child extends Parent
+{
+	
+  	void   marry()
+	{
+		System.out.println("gita");
+		
+	}
+}
+
+class Test
+{
+	public static void main(String arg[]) throws Exception
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+
+o/p:
+gita
+
+
+class Parent
+{
+     void   marry() 
+	{
+		System.out.println("rita");
+		
+	}
+}
+class Child extends Parent
+{
+	
+  	void   marry()throws Exception
+	{
+		System.out.println("gita");
+		
+	}
+}
+
+class Test
+{
+	public static void main(String arg[]) throws Exception
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+o/p:
+1.java:14: error: marry() in Child cannot override marry() in Parent
+        void   marry()throws Exception
+               ^
+  overridden method does not throw Exception
+1 error
+
+
+
+class Parent
+{
+     void   marry()throws Exception
+	{
+		System.out.println("rita");
+		
+	}
+}
+class Child extends Parent
+{
+	
+  	void   marry()throws Exception
+	{
+		System.out.println("gita");
+		
+	}
+}
+
+class Test
+{
+	public static void main(String arg[]) throws Exception
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+
+o/p:
+gita
+
+
+Exception>ArithmeticException
+
+class Parent
+{
+     void   marry()throws Exception
+	{
+		System.out.println("rita");
+		
+	}
+}
+class Child extends Parent
+{
+	
+  	void   marry()throws ArithmeticException
+	{
+		System.out.println("gita");
+		
+	}
+}
+
+class Test
+{
+	public static void main(String arg[]) throws Exception
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+o/p:
+gita
+
+
+
+
+class Parent
+{
+     void   marry()throws ArithmeticException
+	{
+		System.out.println("rita");
+		
+	}
+}
+class Child extends Parent
+{
+	
+  	void   marry() throws Exception
+	{
+		System.out.println("gita");
+		
+	}
+}
+
+class Test
+{
+	public static void main(String arg[]) throws Exception
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+o/p:
+C:\Users\DELL\Desktop>javac 1.java
+1.java:12: error: marry() in Child cannot override marry() in Parent
+        void   marry() throws Exception
+               ^
+  overridden method does not throw Exception
+1 error
+
+
+
+
+
+
+
+
+
+
+
+//final method never overrididng
+
+class Parent
+{
+    final void   marry()
+	{
+		System.out.println("rita");
+		
+	}
+}
+class Child extends Parent
+{
+	
+  	void   marry()
+	{
+		System.out.println("gita");
+		
+	}
+}
+
+class Test
+{
+	public static void main(String arg[]) 
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+o/p:
+error
+
+
+class Parent
+{
+     void   marry()
+	{
+		System.out.println("rita");
+		
+	}
+}
+class Child extends Parent
+{
+	
+   final 	void   marry()
+	{
+		System.out.println("gita");
+		
+	}
+}
+
+class Test
+{
+	public static void main(String arg[]) 
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+
+o/p:
+gita 
+
+
+overloading 
+____
+class Parent
+{
+   final void   marry()
+	{
+		System.out.println("rita");
+		
+	}
+}
+class Child extends Parent
+{
+	
+   	void   marry(int x)
+	{
+		System.out.println("gita");
+		
+	}
+}
+
+class Test
+{
+	public static void main(String arg[]) 
+	{
+	    Parent p=new Child(); //upcasting
+	    p.marry(); 
+	}
+}
+
+o/p:
+rita
+
+class Parent
+{
+   static  void   marry()
+	{
+		System.out.println("rita");
+		
+	}
+}
+class Child extends Parent
+{
+	
+   	void   marry(int x)
+	{
+		System.out.println("gita");
+		
+	}
+}
+
+class Test
+{
+	public static void main(String arg[]) 
+	{
+	    Parent p=new Child(); 
+	    p.marry(); 
+	}
+}
+
+o/p:
+rita
+
+
+datamember never overloading and overridding 
+method  overloading and overriding
+______________
+class Parent
+{
+	int x=10;
+    void   marry()
+	{
+		System.out.println("rita");
+		
+	}
+}
+class Child extends Parent
+{
+	int x=20;
+   	void   marry()
+	{
+		System.out.println("gita");
+		
+	}
+}
+
+class Test
+{
+	public static void main(String arg[]) 
+	{
+	    Parent p=new Child(); 
+	    p.marry(); 
+	    System.out.println(p.x);
+	}
+}
+
+o/p:
+gita
+10
+
+
+class Parent
+{
+	int x=10;
+    void   marry()
+	{
+		System.out.println("rita");
+		
+	}
+}
+class Child extends Parent
+{
+	int x=20;
+   	void   marry()
+	{
+		System.out.println("gita");
+		
+	}
+}
+
+class Test
+{
+	public static void main(String arg[]) 
+	{
+	    Child p=new Child(); 
+	    p.marry(); 
+	    System.out.println(p.x);
+	}
+}
+
+o/p:
+gita
+20
+
+
+class Parent
+{
+	public static void main(String arg[])
+	{
+		System.out.println("P main");
+	}
+}
+class Child extends Parent
+{
+	
+}
+
+class Test
+{
+	public static void main(String arg[]) 
+	{
+	   System.out.println("Test main");
+	   String x[]={"hi"};
+	   Parent.main(x);
+	   Child.main(x);
+	}
+}
+
+o/p:
+Test main
+P main
+P main
+
+
+
+class main
+{
+	 main()
+	 {
+	 	System.out.println("default constructor ");
+	 }
+	  main(int x)
+	 {
+	 	System.out.println("para constructor ");
+	 }
+	 static void main(int x)
+	 {
+	 	System.out.println(x);
+	 }
+	public static void main(String ...arg) 
+	{
+	  main m=new main();
+	  main(10);
+	}
+}
+
+o/p:
+Test main
+P main
+P main
