@@ -16,7 +16,7 @@ class duplicate{
 	int arr[]={5,5,5,4,1,7,1};
 	int res=duplicate(arr);
 	if(res!=-1){
-	System.out.println("Duplicate"+res);
+	System.out.println("Duplicate:"+res);
 	}else{
 	System.out.println("Not Duplicate");
 	}
