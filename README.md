@@ -1,2 +1,4 @@
-<img width="400" height="300" alt="python-vs-java" src="https://github.com/user-attachments/assets/acd31c7e-610a-4bbc-b056-55a710468942" />
-20
+
+☕ Java Coding Notes
+
+This repository contains important Java coding notes, programs, and practice questions. I update it regularly as I learn new concepts and solve coding problems.
