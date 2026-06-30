@@ -1,4 +1,5 @@
 1. What is a Wrapper Class?
+________________________________________
 
 A Wrapper Class is a predefined Java class that converts (wraps) a primitive data type into an object.
 
