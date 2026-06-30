@@ -1,2 +1,2 @@
-<img width="200" height="200" alt="python-vs-java" src="https://github.com/user-attachments/assets/acd31c7e-610a-4bbc-b056-55a710468942" />
+<img width="400" height="300" alt="python-vs-java" src="https://github.com/user-attachments/assets/acd31c7e-610a-4bbc-b056-55a710468942" />
 20
